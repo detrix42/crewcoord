@@ -53,6 +53,7 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
+  gem "annotate"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -66,4 +67,6 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
+gem 'jdl_rnd', '>= 0.1.0', git: 'ssh://dev.novasector.net:2244/git/ruby/jdl_rnd'
+# gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
+gem 'sass-rails', '~> 6.0'

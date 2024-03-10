@@ -6,22 +6,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- page specific css -->
+    <%= yield :moreCSS %>
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <!-- page specific JS -->
+    <%= yield :moreJS %>
   </head>
 
   <body>
-    <nav class="dflexr-jcsb top-nav">
-      <div class="brand">
-        CrewCoord
-      </div>
-      <div class="nav-center">
-        Center Nav
-      </div>
-      <div class="nav-user-actions">
-        User Action panel
-      </div>
-    </nav>
+    <%= render 'layouts/top_nav_bar' %>
     <%= yield %>
   </body>
 </html>

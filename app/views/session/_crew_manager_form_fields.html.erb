@@ -1,0 +1,27 @@
+<div class="dflexc-jcs crew-manager-col">
+  <%= f.fields_for :crew_manager do |cm| %>
+    <div class="form-header2">
+      Crew Manager Information
+    </div>
+    <div class="dflexc-jcs field">
+      <%= cm.label :name %>
+      <%= cm.text_field :name %>
+    </div>
+
+    <div class="dflexc-jcs field">
+      <%= cm.label :email %>
+      <%= cm.text_field :email %>
+    </div>
+
+    <div class="dflexc-jcs field">
+      <%= cm.label :password %>
+      <%= cm.text_field :password %>
+    </div>
+
+    <div class="dflexc-jcs field">
+      <%= cm.label :password_confirmation %>
+      <%= cm.text_field :password_confirmation %>
+    </div>
+
+  <% end %>
+</div>

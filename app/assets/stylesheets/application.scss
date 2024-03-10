@@ -13,10 +13,36 @@
  *= require_tree .
  *= require_self
  */
+@import 'myVariables';
 
 body {
   background: #2a2d31;
   margin: 0;
 
   color: bisque;
+}
+
+:root {
+  --top-nav-height: 4rem;
+
+  // global colors
+  --card-border-color: bisque;
+  --form-border-color: #919191;
+
+  --header1-bg-color: rgba(0, 0, 0, 0.3);
+  --header1-border-color: var(--card-border-color);
+
+  --header2-bg-color: rgba(255, 255, 255, 0.25);
+
+  //  global font sizes
+  --header1-font-size: 3rem;
+  --header1-height: 4rem;
+
+  --header2-font-size: 2rem;
+  --header2-height: 3rem;
+
+  --form-font-size: 1.5rem;
+
+  // border radii
+  --form-border-radus: 1rem;
 }

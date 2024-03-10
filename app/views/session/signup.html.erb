@@ -1,0 +1,37 @@
+<% provide :title, "Company Sign Up" %>
+<% content_for :moreCSS do %>
+  <%= stylesheet_link_tag "company_signup", media: 'screen' %>
+<% end %>
+
+<div class="dflexc-jcc main-container">
+  <div class="dflexc-jcs signup-card">
+    <div class="signup-form-header">New Company Signup</div>
+    <% if @business.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@business.errors.count, "error") %> prohibited this business from being saved:</h2>
+
+        <ul>
+          <% @business.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+      <%= form_with(model: @business, html: {
+        class: 'dflexr-jcs form-row'
+      }) do |f| %>
+
+      <%= render 'company_from_fields', f: f %>
+
+      <%= render 'crew_manager_form_fields', f: f %>
+
+        <div class="actions company-form-submit">
+          <%= f.submit %>
+        </div>
+      <% end %>
+
+
+
+  </div>
+</div>
+
