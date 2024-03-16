@@ -22,11 +22,19 @@ end
 # terminating a worker in development environments.
 worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
 
-# Specifies the `port` that Puma will listen on to receive requests; default is 3000.
-port ENV.fetch("PORT") { 3000 }
+renv = ENV.fetch('RAILS_ENV_NOVASECTOR') {'production'}
 
+if renv == 'production' or renv == 'prod_pg'
+  #  puts "in production mode, binding to a unix socket"
+  bind "unix:///home/detrix42/www/socks/crewcoord"
+else
+  # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
+  #
+  port ENV.fetch("PORT") { 4200 }
+end
 # Specifies the `environment` that Puma will run in.
-environment ENV.fetch("RAILS_ENV") { "development" }
+#
+environment renv
 
 # Specifies the `pidfile` that Puma will use.
 pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
