@@ -84,5 +84,5 @@ test:
 production:
   <<: *default
   database: crew_coord_production
-  username: crew_coord
+  username: crew_coord_app
   password: <%= ENV["CREW_COORD_DATABASE_PASSWORD"] %>

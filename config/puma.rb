@@ -22,7 +22,7 @@ end
 # terminating a worker in development environments.
 worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
 
-renv = ENV.fetch('RAILS_ENV_NOVASECTOR') {'production'}
+renv = ENV.fetch('RAILS_ENV_CREWCOORD') {'production'}
 
 if renv == 'production' or renv == 'prod_pg'
   #  puts "in production mode, binding to a unix socket"
