@@ -14,8 +14,9 @@
 #  updated_at      :datetime         not null
 #
 class Business < ApplicationRecord
-  belongs_to :crew_manager, inverse_of: :business
-  accepts_nested_attributes_for :crew_manager,
+  has_one :crew_member
+  has_many :crews, dependent: :destroy
+  accepts_nested_attributes_for :crew_member,
                                 reject_if: :all_blank,
                                 allow_destroy: true
 end

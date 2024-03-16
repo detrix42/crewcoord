@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  get 'business/create'
   get 'session/signup'
   get 'session/login'
   get 'session/create'
   get 'home/index', to: 'home#landing'
 
-  resources :businesses
+  resources :business
 
   # get 'company_signup', to: ''
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -1,5 +1,5 @@
 <div class="dflexc-jcs crew-manager-col">
-  <%= f.fields_for :crew_manager do |cm| %>
+  <%= f.fields_for :crew_member do |cm| %>
     <div class="form-header2">
       Crew Manager Information
     </div>
@@ -15,12 +15,12 @@
 
     <div class="dflexc-jcs field">
       <%= cm.label :password %>
-      <%= cm.text_field :password %>
+      <%= cm.password_field :password %>
     </div>
 
     <div class="dflexc-jcs field">
       <%= cm.label :password_confirmation %>
-      <%= cm.text_field :password_confirmation %>
+      <%= cm.password_field :password_confirmation %>
     </div>
 
   <% end %>

@@ -9,16 +9,21 @@
   </div>
 
   <div class="dflexc-jcs field">
-    <%= f.label :address1 %>
+    <%= f.label :phone, "Phone Number" %>
+    <%= f.phone_field :phone %>
+  </div>
+
+  <div class="dflexc-jcs field">
+    <%= f.label :address1, "Street Address" %>
     <%= f.text_field :address1 %>
   </div>
 
   <div class="dflexc-jcs field">
-    <%= f.label :address2 %>
-    <%= f.text_field :address2 %>
+    <%= f.label :address2, "Additional Address Info" %>
+    <%= f.text_field :address2, placeholder: 'Suit/Apt#' %>
   </div>
 
-  <div class="dflexr-jcs city-state-zip-row">
+  <div class="dflexr-jcsb city-state-zip-row">
 
     <div class="dflexc-jcs field input-city">
       <%= f.label :city %>

@@ -3,35 +3,53 @@
   <%= stylesheet_link_tag "company_signup", media: 'screen' %>
 <% end %>
 
+<%# content_for :moreJS do %>
+  <%#= javascript_include_tag "company_signup" %>
+<%# end %>
+
 <div class="dflexc-jcc main-container">
+  <% if @business.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@business.errors.count, "error") %> prohibited this business from being saved:</h2>
+
+      <ul>
+        <% @business.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="dflexc-jcs signup-card">
     <div class="signup-form-header">New Company Signup</div>
-    <% if @business.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@business.errors.count, "error") %> prohibited this business from being saved:</h2>
 
-        <ul>
-          <% @business.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
+    <%= form_with(model: @business, url: business_index_path(@business),
+                  method: :post,
+                  html: {class: 'form-row'}) do |f| %>
+
+      <div class="dflexr-jcs">
+        <%= render 'company_from_fields', f: f %>
+
+        <%= render 'crew_member_form_fields', f: f %>
+
       </div>
+
+
+      <%= f.button 'Submit New Business',
+           class: 'btn-common company-form-submit',
+           data: { disable_width: 'Processing...'} %>
+
+      <%= link_to 'Cancel', root_path, class: 'btn-common btn-cancel' %>
+
     <% end %>
-      <%= form_with(model: @business, html: {
-        class: 'dflexr-jcs form-row'
-      }) do |f| %>
 
-      <%= render 'company_from_fields', f: f %>
-
-      <%= render 'crew_manager_form_fields', f: f %>
-
-        <div class="actions company-form-submit">
-          <%= f.submit %>
-        </div>
-      <% end %>
-
-
+<!--    <div class="actions company-form-submit">-->
+<!--      <button type="submit" name="commit" class="btn-common"-->
+<!--              data-disable-with="Create Business">-->
+<!--        Submit Signup-->
+<!--      </button>-->
+<!--    </div>-->
 
   </div>
+
 </div>
 

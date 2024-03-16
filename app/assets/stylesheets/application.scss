@@ -22,6 +22,13 @@ body {
   color: bisque;
 }
 
+.btn-common {
+  border: 1px solid var(--form-signup-btn-border-color);
+  border-radius: .5rem;
+  font-size: 1.5rem;
+  lineheight: 1.8rem;
+}
+
 :root {
   --top-nav-height: 4rem;
 
@@ -29,8 +36,15 @@ body {
   --card-border-color: bisque;
   --form-border-color: #919191;
 
+  --btn-cancel-bg-color: #8f0000;
+  --btn-cancel-bdr-color: red;
+  --btn-cancel-fg-color: bisque;
+
   --header1-bg-color: rgba(0, 0, 0, 0.3);
   --header1-border-color: var(--card-border-color);
+  --form-input-fields-bg: var(--header1-bg-color);
+  --form-signup-btn-border-color: var(--form-border-color);
+  --form-signup-btn-bg-color: bisque;
 
   --header2-bg-color: rgba(255, 255, 255, 0.25);
 

@@ -10,5 +10,6 @@
 #  updated_at :datetime         not null
 #
 class CrewMember < ApplicationRecord
-  belongs_to :crew
+  has_secure_password
+  belongs_to :business
 end

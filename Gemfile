@@ -70,3 +70,4 @@ end
 gem 'jdl_rnd', '>= 0.1.0', git: 'ssh://dev.novasector.net:2244/git/ruby/jdl_rnd'
 # gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
 gem 'sass-rails', '~> 6.0'
+gem 'jquery-rails'
