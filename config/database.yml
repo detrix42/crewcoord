@@ -14,7 +14,6 @@
 #
 default: &default
   adapter: postgresql
-  port: 5433
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
@@ -85,5 +84,7 @@ test:
 production:
   <<: *default
   database: crew_coord_production
-  username: crew_coord_app
-  password: <%= ENV["CREW_COORD_DATABASE_PASSWORD"] %>
+  port: 5433
+  username: detrix42
+  password: Klingon8085
+  #password: <%= ENV["CREW_COORD_DATABASE_PASSWORD"] %>
