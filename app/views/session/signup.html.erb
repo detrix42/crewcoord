@@ -23,11 +23,11 @@
     <div class="signup-form-header">New Company Signup</div>
 
     <%= form_with(model: @business, url: business_index_path(@business),
-                  method: :post,
+                  method: :post, id: 'companySignupForm',
                   html: {class: 'form-row'}) do |f| %>
 
       <div class="dflexr-jcs">
-        <%= render 'company_from_fields', f: f %>
+        <%= render 'company_form_fields', f: f %>
 
         <%= render 'crew_member_form_fields', f: f %>
 
@@ -52,4 +52,9 @@
   </div>
 
 </div>
+<script type="text/javascript" charset="utf-8">
+  import 'jquery'
+  let req_fields = $('.required_signup_field')
+  console.log('required fields:', req_fields)
+</script>
 

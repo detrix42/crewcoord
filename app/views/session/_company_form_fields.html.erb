@@ -5,17 +5,17 @@
 
   <div class="dflexc-jcs field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'required_signup_field' %>
   </div>
 
   <div class="dflexc-jcs field">
     <%= f.label :phone, "Phone Number" %>
-    <%= f.phone_field :phone %>
+    <%= f.phone_field :phone, class: 'required_signup_field' %>
   </div>
 
   <div class="dflexc-jcs field">
     <%= f.label :address1, "Street Address" %>
-    <%= f.text_field :address1 %>
+    <%= f.text_field :address1, class: 'required_signup_field' %>
   </div>
 
   <div class="dflexc-jcs field">
@@ -27,17 +27,17 @@
 
     <div class="dflexc-jcs field input-city">
       <%= f.label :city %>
-      <%= f.text_field :city %>
+      <%= f.text_field :city, class: 'required_signup_field' %>
     </div>
 
     <div class="dflexc-jcs field input-state">
       <%= f.label :state %>
-      <%= f.text_field :state %>
+      <%= f.text_field :state, class: 'required_signup_field' %>
     </div>
 
     <div class="dflexc-jcs field input-zipcode">
       <%= f.label :zip_code %>
-      <%= f.text_field :zipcode %>
+      <%= f.text_field :zipcode, class: 'required_signup_field' %>
     </div>
 
   </div>

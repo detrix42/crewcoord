@@ -5,22 +5,22 @@
     </div>
     <div class="dflexc-jcs field">
       <%= cm.label :name %>
-      <%= cm.text_field :name %>
+      <%= cm.text_field :name, class: 'required_signup_field' %>
     </div>
 
     <div class="dflexc-jcs field">
       <%= cm.label :email %>
-      <%= cm.text_field :email %>
+      <%= cm.text_field :email, class: 'required_signup_field' %>
     </div>
 
     <div class="dflexc-jcs field">
       <%= cm.label :password %>
-      <%= cm.password_field :password %>
+      <%= cm.password_field :password, class: 'required_signup_field' %>
     </div>
 
     <div class="dflexc-jcs field">
       <%= cm.label :password_confirmation %>
-      <%= cm.password_field :password_confirmation %>
+      <%= cm.password_field :password_confirmation, class: 'required_signup_field' %>
     </div>
 
   <% end %>
