@@ -13,4 +13,4 @@ Rails.application.config.assets.paths << 'app/assets/styles'
 
 Rails.application.config.assets.precompile += %w( home.css )
 Rails.application.config.assets.precompile += %w( jquery.min.js,
-jquery_ujs.min.js )
+jquery_ujs.min.js, company_signup.js )

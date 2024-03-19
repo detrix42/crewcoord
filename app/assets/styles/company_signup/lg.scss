@@ -1,0 +1,157 @@
+@media only screen and (min-width: 992px) {
+
+
+  .main-container {
+
+    .signup-card {
+      position: relative;
+
+      width: 60%;
+      min-height: 500px;
+      height: calc(700px + var(--top-nav-height) +
+                           var(--header1-height));
+
+      margin-bottom: 2rem;
+
+
+      gap: 10px;
+
+      border: 1px solid #8c8c4d;
+      box-shadow: 5px 5px 20px black;
+
+      input {
+        font-size: var(--form-font-size);
+      }
+
+      .field {
+        margin: 4px 8px;
+        flex: 1;
+      }
+
+      .form-row {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      .signup-form-header {
+        font-size: var(--header1-font-size);
+        background-color: var(--header1-bg-color);
+        height: var(--header1-height);
+
+        text-align: center;
+      }
+
+      input {
+        background-color: var(--form-input-fields-bg);
+        border: none;
+        border-bottom: 2px solid var(--form-border-color);
+        color: white;
+        padding: 3px 5px;
+
+        &:active, &:focus {
+          outline: none;
+          border-bottom: none;
+          box-shadow: 0 0 10px rgb(130, 219, 246);
+        }
+      }
+
+      input[type="submit"] {
+
+      }
+
+      .need_required {
+        box-shadow: 0 0 5px red;
+      }
+
+      .company-col {
+        flex: 1;
+
+        margin: 1rem;
+        border: 1px solid var(--form-border-color);
+        border-top-left-radius: var(--form-border-radus);
+        border-top-right-radius: var(--form-border-radus);
+
+        input[name='business[name]'],
+        input[name='business[address1]'],
+        input[name='business[address2]'] {
+
+        }
+
+
+
+        .city-state-zip-row {
+
+          gap: .5rem;
+
+          input[name='business[city]'] {
+
+          }
+        }
+
+        .input-state {
+          flex: 0 1;
+          width: 70px;
+        }
+
+        .input-city,
+        .input-zipcode {
+          flex: 1;
+        }
+
+        .input-city,
+        .input-state,
+        .input-zipcode {
+        }
+
+        .input-city {
+          width: 10px;
+        }
+        .input-zipcode {
+          width: 20%;
+        }
+      }
+
+      .crew-manager-col {
+        flex: 1;
+        margin: 1rem;
+        border: 1px solid var(--form-border-color);
+        border-top-left-radius: var(--form-border-radus);
+        border-top-right-radius: var(--form-border-radus);
+
+      .form-header2 {
+        font-size: var(--header2-font-size);
+        background-color: var(--header2-bg-color);
+        height: var(--header2-height);
+
+        padding-left: 10px;
+        min-width: 400px;
+
+        border-top-left-radius: var(--form-border-radus);
+        border-top-right-radius: var(--form-border-radus);
+      }
+
+    }
+
+      .button-row {
+        --btn-padding: 3px 6px;
+        height: 40px;
+        margin: 1rem;
+
+        .company-form-submit {
+          padding: var(--btn-padding);
+        }
+
+        .btn-cancel {
+          background-color: var(--btn-cancel-bg-color);
+          border-color: var(--btn-cancel-bdr-color);
+          color: var(--btn-cancel-fg-color);
+          padding: var(--btn-padding);
+          text-decoration: none;
+        }
+      }
+
+    }
+
+  }
+
+}

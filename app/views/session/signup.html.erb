@@ -3,9 +3,9 @@
   <%= stylesheet_link_tag "company_signup", media: 'screen' %>
 <% end %>
 
-<%# content_for :moreJS do %>
-  <%#= javascript_include_tag "company_signup" %>
-<%# end %>
+<% content_for :moreJS do %>
+  <%= javascript_include_tag "company_signup" %>
+<% end %>
 
 <div class="dflexc-jcc main-container">
   <% if @business.errors.any? %>
@@ -24,37 +24,29 @@
 
     <%= form_with(model: @business, url: business_index_path(@business),
                   method: :post, id: 'companySignupForm',
-                  html: {class: 'form-row'}) do |f| %>
+                  html: {class: 'business-form'}) do |f| %>
 
-      <div class="dflexr-jcs">
+      <div class="dflexr-jcs form-row">
         <%= render 'company_form_fields', f: f %>
 
         <%= render 'crew_member_form_fields', f: f %>
 
       </div>
 
+      <div class="dflexr-jcsb button-row">
 
-      <%= f.button 'Submit New Business',
-           class: 'btn-common company-form-submit',
-           data: { disable_width: 'Processing...'} %>
+        <%= link_to 'Cancel', root_path, class: 'btn-common btn-cancel' %>
 
-      <%= link_to 'Cancel', root_path, class: 'btn-common btn-cancel' %>
+        <%= f.button 'Submit New Business', id: 'new-business-submit-button',
+                     class: 'btn-common company-form-submit', disabled: true,
+                     data: { disable_width: 'Processing...' } %>
+      </div>
+
 
     <% end %>
 
-<!--    <div class="actions company-form-submit">-->
-<!--      <button type="submit" name="commit" class="btn-common"-->
-<!--              data-disable-with="Create Business">-->
-<!--        Submit Signup-->
-<!--      </button>-->
-<!--    </div>-->
 
   </div>
 
 </div>
-<script type="text/javascript" charset="utf-8">
-  import 'jquery'
-  let req_fields = $('.required_signup_field')
-  console.log('required fields:', req_fields)
-</script>
 
