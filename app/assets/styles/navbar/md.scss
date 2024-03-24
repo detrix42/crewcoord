@@ -1,0 +1,48 @@
+@media only screen and (min-width: 768px) {
+  .top-nav {
+    background: #232a33;
+    color: #62c9cc;
+    height: $top-nav-height;
+
+    .brand {
+      margin-left: 20px;
+      font-size: 3rem;
+    }
+
+    .txt-company {
+      font-size: 1.5em;
+      align-items: center;
+    }
+
+    .nav-actions {
+      gap: 1rem;
+      margin-right: 20px;
+      width: 20%;
+
+      .txt-company {
+        text-align: center;
+      }
+
+      .company-action-row {
+        gap: 2rem;
+
+        a {
+          text-decoration: none;
+
+          &:visited {
+            color: #426869;
+
+          }
+        }
+      }
+    }
+    .menu-action {
+      display: none;
+    }
+
+  }
+  .nav-panel {
+    display: none;
+  }
+
+}

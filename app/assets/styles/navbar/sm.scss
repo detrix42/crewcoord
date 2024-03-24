@@ -1,0 +1,55 @@
+@media only screen and (max-width: 768px) {
+  .top-nav {
+    background: #232a33;
+    color: #62c9cc;
+    height: $top-nav-height;
+
+    .brand {
+      margin-left: 20px;
+      font-size: 3rem;
+    }
+
+    .nav-actions {
+      display: none;
+    }
+
+  }
+  .nav-panel {
+    display: none;
+    z-index: 99;
+
+    font-size: 2em;
+
+    width: 100%;
+    background: rgba(86, 103, 133, 0.53);
+    backdrop-filter: blur(5px);
+
+    .theDate {
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+
+      &:visited {
+        color: #123031;
+      }
+    }
+
+    .nav-item {
+      margin: 10px auto;
+    }
+  }
+
+  .nav-panel-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .displayOff {
+    display: none;
+  }
+}

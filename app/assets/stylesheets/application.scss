@@ -16,6 +16,7 @@
 @import 'myVariables';
 
 
+
 body {
   background: #2a2d31;
   margin: 0;
@@ -27,7 +28,7 @@ body {
   border: 1px solid var(--form-signup-btn-border-color);
   border-radius: .5rem;
   font-size: 1.5rem;
-  lineheight: 1.8rem;
+  line-height: 1.8rem;
 }
 
 :root {

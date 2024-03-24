@@ -1,35 +1,7 @@
 @import 'myVariables';
+@import '../styles/navbar/xs';
+@import '../styles/navbar/sm';
+@import '../styles/navbar/md';
+@import '../styles/navbar/lg';
+@import '../styles/navbar/xl';
 
-.top-nav {
-  background: #232a33;
-  color: #62c9cc;
-  height: $top-nav-height;
-
-  .brand {
-    margin-left: 20px;
-    font-size: 3rem;
-  }
-
-  .nav-user-actions {
-    gap: 1rem;
-    margin-right: 20px;
-    width: 10%;
-
-    .txt-company {
-      text-align: center;
-    }
-
-    .company-action-row {
-      gap: 2rem;
-
-      a {
-        text-decoration: none;
-
-        &:visited {
-          color: #426869;
-
-        }
-      }
-    }
-  }
-}
