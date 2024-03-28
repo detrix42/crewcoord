@@ -27,6 +27,8 @@ renv = ENV.fetch('RAILS_ENV_CREWCOORD') {'production'}
 if renv == 'production' or renv == 'prod_pg'
   #  puts "in production mode, binding to a unix socket"
   bind "unix:///home/detrix42/www/socks/crewcoord"
+elsif renv == 'live_dev'
+  bind "unix:///home/detrix42/www/socks/crewcoord_dev.sock"
 else
   # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
   #
