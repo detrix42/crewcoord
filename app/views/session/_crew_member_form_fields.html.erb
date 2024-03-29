@@ -19,7 +19,13 @@
     </div>
 
     <div class="dflexc-jcs field">
-      <%= cm.label :password_confirmation %>
+      <div class="dflexr-jcsb">
+        <%= cm.label :password_confirmation %>
+        <span class="displayOff" id="pass-do-not-match-txt">
+          *does not match password
+        </span>
+      </div>
+
       <%= cm.password_field :password_confirmation, class: 'required_signup_field' %>
     </div>
 

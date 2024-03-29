@@ -122,7 +122,9 @@
     border-top-left-radius: var(--form-border-radus);
     border-top-right-radius: var(--form-border-radus);
 
-
+    .pass-do-not-match-shadow {
+      box-shadow: 0 0 8px yellow !important;
+    }
 
   }
 

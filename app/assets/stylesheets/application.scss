@@ -31,6 +31,10 @@ body {
   line-height: 1.8rem;
 }
 
+.displayOff {
+  display: none !important;
+}
+
 :root {
   --top-nav-height: 4rem;
 
