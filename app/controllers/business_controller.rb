@@ -1,5 +1,10 @@
+require 'jdl_rnd'
+
 class BusinessController < ApplicationController
   def create
+    rnd = RND.new
+    @token = rnd.token 64
+
     b_prms = create_params
     cm = CrewMember.new(b_prms[:crew_member_attributes])
     cm.is_crew_manager = true
@@ -10,6 +15,7 @@ class BusinessController < ApplicationController
     if @business.save
       log(:info, "Business #{@business.name} created successfully")
       cm.business = @business
+      ManagerConfirmation.new(manager_id: cm.id, token: @token).save
     else
       log(:error, "Business #{@business.name} " +
         "not created for the followig reasons:\n" +

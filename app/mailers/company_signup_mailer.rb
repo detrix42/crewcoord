@@ -1,5 +1,5 @@
 class CompanySignupMailer < ApplicationMailer
-  default from: 'mailer_bot@crewcoord.net'
+  default from: 'signup_mailer@crewcoord.net'
 
   def company_signup_confirmation(company, crew_manager)
     @manager = crew_manager
