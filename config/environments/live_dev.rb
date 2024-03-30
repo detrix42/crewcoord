@@ -51,7 +51,7 @@ Rails.application.configure do
     openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE,
     user_name: "webmaster@crewcoord.net",
     password: "Klingon8085",
-    read_timeout: 60, # Time in seconds, you can increase it accordingly.
+    read_timeout: 600, # Time in seconds, you can increase it accordingly.
     open_timeout: 60, # Time in seconds, this is for the opening connection.
   }
   #####################################################################
