@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'crew_manager_verification/confirm_token'
   get 'business/create'
   get 'session/signup'
   get 'session/login'
