@@ -1,12 +1,12 @@
 class CompanySignupMailer < ApplicationMailer
-  default from: 'signup_mailer@crewcoord.net'
+  default from: 'webmaster@crewcoord.net'
 
   def company_signup_confirmation
-    @manager = params[:crew_manager]
+    @manager = params[:manager]
     @company = params[:company]
     @token = params[:token]
     @url = 'https://crewcoord.net/login'
-    main(to: @manager.email,
-         subject: 'Crew Manager sign up email verification')
+    mail(to: @manager.email,
+         subject: "#{@company.name} sign up to CrewCoord.net")
   end
 end
