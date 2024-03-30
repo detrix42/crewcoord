@@ -1,4 +1,4 @@
-class CrewManagerverificationController < ApplicationController
+class CrewManagerVerificationController < ApplicationController
   def confirm_token
   end
 end
