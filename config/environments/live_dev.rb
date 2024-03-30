@@ -48,7 +48,8 @@ Rails.application.configure do
     port: 587,
     authentication: "plain",
     enable_starttls_auto: true,
-    openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE,
+    # openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE,
+    openssl_verify_mode: 'none',
     user_name: "webmaster@crewcoord.net",
     password: "Klingon8085",
     read_timeout: 600, # Time in seconds, you can increase it accordingly.
