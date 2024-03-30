@@ -31,6 +31,8 @@ class BusinessController < ApplicationController
     end
 
     if @business.errors.empty?
+      CompanySignupMailer.with(company: @business, manager: cm, token: @token)
+                         .company_signup_confirmation.deliver_later
       log(:info, "Business created successfully")
       redirect_to '/'
     else
