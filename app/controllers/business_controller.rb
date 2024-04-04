@@ -6,32 +6,34 @@ class BusinessController < ApplicationController
     @token = rnd.token 64
 
     b_prms = create_params
-    cm = CrewMember.new(b_prms[:crew_member_attributes])
-    cm.is_crew_manager = true
+    manager = CrewMember.new(b_prms[:crew_member_attributes])
+    manager.is_crew_manager = true
 
     @business = Business.new(b_prms)
-    @business.crew_member = cm
+    @business.crew_member = manager
 
     if @business.save
       log(:info, "Business #{@business.name} created successfully")
-      cm.business = @business
-      ManagerConfirmation.new(manager_id: cm.id, token: @token).save
+      manager.business = @business
+      ManagerConfirmation.new(manager_id: manager.id, token: @token).save
     else
       log(:error, "Business #{@business.name} " +
         "not created for the followig reasons:\n" +
         "#{@business.errors.full_messages.join("\n")}")
     end
 
-    if cm.errors.empty?
+    if manager.errors.empty?
       log(:info, "Crew Member (Manager) created successfully")
     else
       log(:error, "Crew Member (Manager)" +
         " not created for the following reasons:\n" +
-        "#{cm.errors.full_messages.join("\n")}")
+        "#{manager.errors.full_messages.join("\n")}")
     end
 
     if @business.errors.empty?
-      CompanySignupMailer.with(company: @business, manager: cm, token: @token)
+      # send_signup_confirmation(@business, manager, @token)
+      # skipping sending email.
+      #CompanySignupMailer.with(company: @business, manager: manager, token: @token)
                          .company_signup_confirmation.deliver_later
       log(:info, "Business created successfully")
       redirect_to '/'
@@ -48,5 +50,29 @@ end
                                    :city, :state, :zipcode,
          crew_member_attributes: [ :name, :email,
                                    :password, :password_confirmation])
+  end
+
+  def send_signup_confirmation(company, manager, token)
+    @manager = manager
+    @company = company
+    @token = token
+
+    msg = render_to_string template: 'mailers/company_signup_confirmation',
+                           layout: 'mailer'
+
+    from = SendGrid::Email.new(email: 'webmaster@crewcoord.net')
+    to = SendGrid::Email.new(email: @manager.email)
+    subject = "#{@company} signed up to CrewCoord.net"
+    content = SendGrid::Content.new(type: 'text/html', value: msg)
+    mail = SendGrid::Mail.new(from, subject, to, content)
+    secret_key = Rails.application.credentials.dig(:sendgrid, :api_key)
+    sg = SendGrid::API.new(api_key: secret_key)
+
+    response = sg.client.mail._('send').post(request_body: mail.to_json)
+    log(:info, "[SendGrid headers]".cyan + " #{response.headers}\n".magenta)
+    log(:info, "[SendGrid response status]".cyan + " #{response.status_code}".magenta)
+    log(:info, "[SendGrid response body]".cyan + " #{response.body}".brown)
+
+    log(:info, "[SendGrid parsed body]".cyan + " #{response.parsed_body}".green)
   end
 end

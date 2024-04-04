@@ -9,4 +9,6 @@ pin_all_from "app/javascript/controllers", under: "controllers"
 pin "jquery",
     to: "https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.js"
 
+pin "bootstrap", to: "bootstrap.min.js", preload: true
+pin "@popperjs/core", to: "popper.js", preload: true
 # pin "companySignup", to: "/app/javascript/custom/company_signup.js"

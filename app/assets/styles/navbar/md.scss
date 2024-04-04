@@ -1,12 +1,13 @@
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 769px) {
   .top-nav {
     background: #232a33;
     color: #62c9cc;
     height: $top-nav-height;
 
     .brand {
-      margin-left: 20px;
+      text-align: center;
       font-size: 3rem;
+      width: 20%;
     }
 
     .txt-company {
@@ -16,7 +17,6 @@
 
     .nav-actions {
       gap: 1rem;
-      margin-right: 20px;
       width: 20%;
 
       .txt-company {
