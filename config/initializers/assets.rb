@@ -18,3 +18,5 @@ Rails.application.config.assets.precompile += %w(
 
 Rails.application.config.assets.precompile += %w( jquery.min.js,
 jquery_ujs.min.js, home.js, company_signup.js )
+# config/initializers/assets.rb
+Rails.application.config.assets.precompile += %w(bootstrap.min.js popper.js)
