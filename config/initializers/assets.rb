@@ -11,12 +11,17 @@ Rails.application.config.assets.paths << 'app/assets/styles'
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( .css )
 
-Rails.application.config.assets.precompile += %w(
-   company_signup.css )
+Rails.application.config.assets.precompile += %w( home.css
+   company_signup.css manager_login.css )
 
 
 
-Rails.application.config.assets.precompile += %w( jquery.min.js,
-jquery_ujs.min.js, home.js, company_signup.js )
+Rails.application.config.assets.precompile +=
+  %w( jquery.min.js jquery_ujs.min.js home.js company_signup.js )
+Rails.application.config.assets.precompile +=
+  %w(manager_login)
+
 # config/initializers/assets.rb
-Rails.application.config.assets.precompile += %w(bootstrap.min.js popper.js)
+Rails.application.config.assets.precompile +=
+  %w(bootstrap.min.js popper.js)
+

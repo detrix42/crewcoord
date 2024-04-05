@@ -5,18 +5,25 @@
   <div class="nav-center">
     <%= theDate %>
   </div>
-  <div class="dflexc-jcc nav-actions">
+  <div class="dflexr-jcsa nav-actions">
 
-    <div class="txt-company">Company</div>
-
-    <div class="dflexr-jcc company-action-row">
+    <div class="dflexc-jcc company-nav-col">
+      <div class="txt-company">Company</div>
       <%= link_to session_signup_url do %>
         <div class="signup">Sign Up</div>
       <% end %>
-      <div class="company-login">Login</div>
     </div>
 
+    <div class="dflexc-jcc manager-nav-col">
+      <div class="txt-manager">
+        Crew Manager
+      </div>
+      <%= link_to session_login_url do %>
+        <div class="company-login">Login</div>
+      <% end %>
+    </div>
   </div>
+
   <div class="dflexc-jcc menu-action">
     <div class="open-navpanel">
       <a> <%# click action handled in javascript file home.js  %>

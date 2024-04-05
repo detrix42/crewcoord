@@ -1,9 +1,6 @@
 console.log('company_signup.js loaded')
 
-window.crewcoord = {
-  signup_validation_ready: false,
-  signup_form_valid: false
-}
+// window.crewcoord set in application.js
 
 // if(!localStorage.getItem('signup_validation_ready')){
 //   console.log('check1')
