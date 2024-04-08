@@ -5,24 +5,45 @@
   <div class="nav-center">
     <%= theDate %>
   </div>
-  <div class="dflexr-jcsa nav-actions">
+  <div class="d-flex justify-content-center nav-actions">
+    <% if !current_user %>
+      <div class="manager-email"><%= @current_user.email %></div>
+      <div class="row justify-space-around">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round" height="30"
+             class="feather feather-settings">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06 .06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V22a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 20a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H2a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06c.5.5 1.2.8 1.94.8a2.6 2.6 0 0 0 1.42-.43A1.65 1.65 0 0 0 9 4V2a2 2 0 0 1 2-2 2 2 0 0 1 2 2v2.09a1.65 1.65 0 0 0 1 .51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09a1.65 1.65 0 0 0 .51 1 1.65 1.65 0 0 0 1.51 1H22a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51-1z"></path>
+        </svg>
 
-    <div class="dflexc-jcc company-nav-col">
-      <div class="txt-company">Company</div>
-      <%= link_to session_signup_url do %>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round"
+             stroke-linejoin="round" height="30">
+          <path d="M16 17a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm2 2h6v-2a10 10 0 1 0-12 0v2h6z"></path>
+          <line x1="16" y1="7" x2="16" y2="7"></line>
+          <path d="M19 11l5 5-5 5m1-10l-5 5"></path>
+        </svg>
+      </div>
+
+    <% else %>
+    <div class="dflexc-jcc col-6 company-nav-col">
+      <div class=" txt-company">Company</div>
+      <%= link_to signup_url do %>
         <div class="signup">Sign Up</div>
       <% end %>
     </div>
 
-    <div class="dflexc-jcc manager-nav-col">
+    <div class="dflexc-jcc col-6 manager-nav-col">
       <div class="txt-manager">
         Crew Manager
       </div>
-      <%= link_to session_login_url do %>
+      <%= link_to login_form_url do %>
         <div class="company-login">Login</div>
       <% end %>
     </div>
   </div>
+  <% end %>
 
   <div class="dflexc-jcc menu-action">
     <div class="open-navpanel">
@@ -49,7 +70,7 @@
   </div>
 
   <div class="dflexc-jcc nav-actions">
-      <%= link_to session_signup_url, data: {turbo_action: 'replace'}, class: 'nav-item' do %>
+      <%= link_to signup_url, data: {turbo_action: 'replace'}, class: 'nav-item' do %>
         <div class="company-signup">Company Sign Up</div>
       <% end %>
       <div class="manger-login nav-item">Crew Manager Login</div>

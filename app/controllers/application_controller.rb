@@ -2,11 +2,11 @@ class ApplicationController < ActionController::Base
   include AlphaHelper
   before_action :set_log_tag
   # before_action :current_user, except: %i[logging_in register]
-
+  add_flash_types :error, :success
 
   protected
   def set_log_tag
-    @logtag = "#{params[:controller]}::#{params[:action]}".bold
+    @logtag = "<#{params[:controller]}::#{params[:action]}>".bold
   end
 
   def log(lvl = :info, message = 'Forgot the message')

@@ -1,7 +1,11 @@
+@import 'myVariables';
 @media only screen and (min-width: 200px)  {
+
   .container {
-    height: calc(100vh - 100px);
+    height: calc(100vh - var(--top-nav-height));
+    width: 80%;
   }
+
   .card {
     --bs-card-border-color: antiquewhite;
   }

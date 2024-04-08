@@ -12,9 +12,8 @@
     }
 
     .nav-actions {
-      gap: 1rem;
-      width: 20%;
-      font-size: 1.5em;
+      flex-basis: 20%;
+      margin: auto 50px auto 0;
 
       .txt-company {
         align-items: center;
@@ -32,6 +31,10 @@
     }
     .menu-action {
       display: none;
+    }
+
+    .nav-center {
+      display: flex;
     }
 
   }

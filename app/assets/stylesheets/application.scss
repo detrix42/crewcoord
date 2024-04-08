@@ -27,6 +27,21 @@ body {
   color: bisque;
 }
 
+input {
+  background-color: var(--form-input-fields-bg) !important;
+  border: none !important;
+  border-bottom: 2px solid var(--form-border-color) !important;
+  color: white !important;
+  padding: 3px 5px !important;
+  font-size: var(--form-font-size) !important;
+
+  &:active, &:focus, &:-webkit-autofill {
+    outline: none !important;
+    border-bottom: none !important;
+    box-shadow: 0 0 10px rgb(130, 219, 246) !important;
+  }
+}
+
 .btn-common {
   border: 1px solid var(--form-signup-btn-border-color);
   border-radius: .5rem;
@@ -50,8 +65,32 @@ a {
   }
 }
 
+.flash {
+  margin: 0 auto;
+  font-size: var(--form-font-size);
+  border-radius: 1rem;
+}
+
+.flash.notice,
+.flash.error {
+  text-align: center;
+}
+
+.flash.notice {
+  background: palegreen;
+  border: 1px solid green;
+  color: darkgreen;
+}
+
+.flash.error {
+  background: red;
+  border: 1px solid darkred;
+  color: yellow;
+}
+
+
 :root {
-  --top-nav-height: 4.2rem;
+  --top-nav-height: 6rem;
 
   // global colors
   --card-border-color: bisque;

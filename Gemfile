@@ -53,6 +53,7 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
+
   gem "annotate"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -75,3 +76,6 @@ gem 'jquery-rails'
 gem 'sendgrid-ruby', '~> 4.1', '>= 4.1.1'
 
 gem 'bootstrap', '~> 5.3.2'
+
+gem "capistrano", "~> 3.10", require: false
+gem 'capistrano-rvm'

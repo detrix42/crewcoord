@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   get 'crew_manager_verification/confirm_token'
   get 'business/create'
-  get 'session/signup'
-  get 'session/login'
-  get 'session/create'
+  get 'signup', to: 'session#signup'
+  get 'login_form', to: 'session#login_form'
   get 'home/index', to: 'home#landing'
 
+  post 'login_actual', to: 'session#login_actual'
   resources :business
 
   # get 'company_signup', to: ''

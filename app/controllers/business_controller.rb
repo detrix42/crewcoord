@@ -15,7 +15,7 @@ class BusinessController < ApplicationController
     if @business.save
       log(:info, "Business #{@business.name} created successfully")
       manager.business = @business
-      ManagerConfirmation.new(manager_id: manager.id, token: @token).save
+      # ManagerConfirmation.new(manager_id: manager.id, token: @token).save
     else
       log(:error, "Business #{@business.name} " +
         "not created for the followig reasons:\n" +
@@ -34,7 +34,7 @@ class BusinessController < ApplicationController
       # send_signup_confirmation(@business, manager, @token)
       # skipping sending email.
       #CompanySignupMailer.with(company: @business, manager: manager, token: @token)
-                         .company_signup_confirmation.deliver_later
+      #                    .company_signup_confirmation.deliver_later
       log(:info, "Business created successfully")
       redirect_to '/'
     else
