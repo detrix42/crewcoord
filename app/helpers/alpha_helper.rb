@@ -17,29 +17,29 @@ module AlphaHelper
     dt.strftime "%A, %b %d#{day_suffix} %Y"
   end
 
-  def current_user
-    if session[:user_id]
-      @current_user ||= CrewMemember.find_by(id: session[:user_id])
+  def manager
+    if session[:manager_id]
+      @manager ||= CrewMember.find_by(id: session[:manager_id])
     else
-      @current_user = CrewMember.new
+      @manager = nil
     end
   end
 
   def base_img_url
-    "https://lc.novasector.net/images/product/"
+    "https://crewcoord.net/public/images"
   end
 
-  def current_user?(user)
-    user == current_user
+  def manager?(mgr)
+    mgr == manager
   end
 
   def logged_in?
-    !@current_user.nil?
+    !@manager.nil?
   end
 
   def log_out
     session.delete :user_id
-    @current_user = nil
+    @manager = nil
     recirect_back_or(root_path)
   end
 

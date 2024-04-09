@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   get 'business/create'
   get 'signup', to: 'session#signup'
   get 'login_form', to: 'session#login_form'
+
   get 'home/index', to: 'home#landing'
+  post 'logout', to: 'session#logout'
 
   post 'login_actual', to: 'session#login_actual'
+
   resources :business
 
   # get 'company_signup', to: ''

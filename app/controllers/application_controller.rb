@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include AlphaHelper
-  before_action :set_log_tag
+  before_action :set_log_tag # adds a prefix to log entries
+
   # before_action :current_user, except: %i[logging_in register]
   add_flash_types :error, :success
 
@@ -24,5 +25,10 @@ class ApplicationController < ActionController::Base
 
   end
 
+  # used to strip color code escape squences I use in log
+  # messages, so the same string can be used in flash messages
+  def strip_color_codes(string)
+    string.gsub(/\e\[(\d+;)*\d+m/, '')
+  end
 
 end

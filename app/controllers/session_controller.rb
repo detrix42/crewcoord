@@ -18,29 +18,35 @@ class SessionController < ApplicationController
     manager = CrewMember.find_by(email: creds[:email])
 
     if manager.present? && manager.authenticate(creds[:password])
-      @current_user = manager
-      session[:manager_id] = @current_user.id
+
+      @manager = manager
+      session[:manager] = @manager
+      session[:manager_id] = @manager.id
       session[:manager_login_time] = Time.now
-      msg = "[LOGIN ACTUAL]".black.bg_brown + "#{@current_user.name} logged in. (Authenticated)".green
+      msg = "[LOGIN ACTUAL] => ".black.bg_brown + "#{@manager['name']} logged in. (Authenticated)".green
       log :info, msg
-      flash[:notice] = msg
+      fmesg =
+      flash[:notice] = strip_color_codes(msg)
       redirect_to root_path
     else
       flash[:error] = "[LOGIN FAILED] check your credentials"
+      msg = "[LOGIN ACTUAL] => ".black.bg_brown + "Failed for #{@manager['name']}".green
+      log :info, msg
       redirect_to login_form_url
 
     end
+  end
 
-    def logout
-      _date = theDate.black.bg_brown
-      log :info, "[LOGOUT::#{_date}] #{@current_user.name}".green.bg_black
-      if params[:manager_id] == session[:manager_id]
-        session[:manager_id] = nil
-        session[:manager_login_time] = nil
-        @current_user = nil
-      end
+  def logout
+    _date = theDate.black.bg_brown
+    log :info, "[LOGOUT::#{_date}] #{manager['name']}".green.bg_black
+    if @manager[:id] == session[:manager_id]
+      session[:manager_id] = nil
+      session[:manager_login_time] = nil
+      session[:manager] = nil
     end
-
+    @manager = nil
+    redirect_to root_path
   end
 
 
