@@ -8,6 +8,7 @@
     .brand {
       margin-left: 10px;
       font-size: 3rem;
+      margin: auto 0;
     }
 
     .nav-center {
@@ -19,8 +20,17 @@
     .nav-actions {
       display: none;
       gap: 1rem;
-      width: 20%;
-      font-size: 1.5em;
+      font-size: 1em;
+
+      .action-item {
+        border: 1px solid #5db4ae;
+        border-radius: 5px;
+        margin-inline: 20%;
+
+        &:hover {
+          color: white;
+        }
+      }
     }
 
     .menu-action {

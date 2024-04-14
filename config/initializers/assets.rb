@@ -12,14 +12,14 @@ Rails.application.config.assets.paths << 'app/assets/styles'
 # Rails.application.config.assets.precompile += %w( .css )
 
 Rails.application.config.assets.precompile += %w( home.css
-   company_signup.css manager_login.css )
+   company_signup.css manager_login.css crewmanager.css )
 
 
 
 Rails.application.config.assets.precompile +=
   %w( jquery.min.js jquery_ujs.min.js home.js company_signup.js )
 Rails.application.config.assets.precompile +=
-  %w(manager_login)
+  %w( manager_login.js crewmanager.js )
 
 # config/initializers/assets.rb
 Rails.application.config.assets.precompile +=

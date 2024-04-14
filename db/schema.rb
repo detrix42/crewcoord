@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_30_023211) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_14_124829) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,7 +57,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_30_023211) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "crew_members", "businesses"
   add_foreign_key "crews", "businesses"
   add_foreign_key "crews", "crew_members"
 end

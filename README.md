@@ -22,4 +22,11 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* 
+
+## Known issues to fix later
+    
+  * **signup form**. 
+    
+    If there is an error, the turbo system is not
+    replacing the form, it appends it outside of body element.
+    

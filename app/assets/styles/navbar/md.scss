@@ -5,17 +5,22 @@
     height: $top-nav-height;
 
     .brand {
+      flex-basis: 30%;
       text-align: center;
       font-size: 3rem;
       width: 20%;
-      margin: auto 0;
+      //margin: auto 0 auto 20px;
+    }
+
+    .nav-actions-container {
+      flex-basis: 30%;
     }
 
     .nav-actions {
-      flex-basis: 20%;
-      margin: auto 50px auto 0;
+      margin: auto 20px auto 0;
 
       .txt-company {
+        font-size: 1.5em;
         align-items: center;
         text-align: center;
       }

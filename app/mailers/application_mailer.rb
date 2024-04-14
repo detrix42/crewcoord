@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
   default from: "webmaster@crewcoord.net"
-  layout "mailer"
+  layout "manager_signup_mailer"
 end

@@ -23,7 +23,7 @@
 body {
   background: #2a2d31;
   margin: 0;
-
+  height: calc(100vh - var(--top-nav-height));
   color: bisque;
 }
 
@@ -40,6 +40,12 @@ input {
     border-bottom: none !important;
     box-shadow: 0 0 10px rgb(130, 219, 246) !important;
   }
+
+
+}
+
+.need-required {
+  box-shadow: 0 0 5px red;
 }
 
 .btn-common {

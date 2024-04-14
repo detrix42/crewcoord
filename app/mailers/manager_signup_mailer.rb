@@ -1,9 +1,9 @@
 # require 'sendgrid-ruby'
 # include SendGrid
 
-class CompanySignupMailer  < ApplicationMailer
-  default from: 'webmaster@crewcoord.net'
-  layout "mailer"
+class ManagerSignupMailer < ApplicationMailer
+  default from: 'detrix42@novasector.net'
+  layout "manager_signup_mailer"
   # def company_signup_confirmation(business, manager, token)
   #   @manager = manager
   #   @company = business
@@ -30,12 +30,11 @@ class CompanySignupMailer  < ApplicationMailer
   #
   # end
 
-  def company_signup_confirmation
+  def manager_signup_mailer
     @manager = params[:manager]
-    @company = params[:company]
     @token = params[:token]
     @url = 'https://crewcoord.net/login'
     mail(to: @manager.email,
-         subject: "#{@company.name} sign up to CrewCoord.net")
+         subject: "CrewCord.net sign up confirmation")
   end
 end

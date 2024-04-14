@@ -1,0 +1,28 @@
+<% provide :title, "" %>
+<% content_for :moreCSS do %>
+  <%= stylesheet_link_tag "crewmember", media: 'screen' %>
+<% end %>
+
+<% content_for :moreJS do %>
+  <%= javascript_include_tag 'crewmember' %>
+<% end %>
+<div class="container d-flex flex-column justify-content-center form-container" data-turbo-action="replace">
+  <% if @manager.errors.any? %>
+    <div role=alert class="">
+      <span class="error-header-txt">Failed to create Crew Manager</span>
+      <ul>
+        <% @manager.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+
+    </div>
+
+  <% end %>
+  <%= render 'crew_member_signup_form_fields' %>
+
+
+</div>
+
+
+

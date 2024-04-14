@@ -11,7 +11,7 @@
 
 import "@hotwired/turbo-rails"
 import "controllers"
-import 'jquery'
+// import 'jquery'
 
 window.crewcoord = {
   signup_validation_ready: false,

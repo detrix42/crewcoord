@@ -1,11 +1,11 @@
-<nav class="dflexr-jcsb top-nav">
+<nav class="d-flex justify-content-between w-100 w-md-90 top-nav">
   <div class="brand">
     CrewCoord
   </div>
   <div class="nav-center">
     <%= theDate %>
   </div>
-  <div class="d-flex justify-content-center nav-actions">
+  <div class="d-flex justify-content-center nav-actions-container">
     <% if manager.present? %>
 
       <div class="d-flex flex-column w-100 action-col-post-login">
@@ -92,22 +92,36 @@
         </div>
 
     <% else %>
-
-      <div class="dflexc-jcc col-6 company-nav-col">
-        <div class=" txt-company">Company</div>
-        <%= link_to signup_url do %>
-          <div class="signup">Sign Up</div>
-        <% end %>
-      </div>
-
-      <div class="dflexc-jcc col-6 manager-nav-col">
-        <div class="txt-manager">
+      <div class="d-none d-md-flex flex-column justify-content-center w-100 nav-actions">
+        <div class="nav-action-header txt-company">
           Crew Manager
         </div>
-        <%= link_to login_form_url do %>
-          <div class="company-login">Login</div>
-        <% end %>
+
+        <div class="d-flex justify-content-between">
+
+          <div class="col-6 text-center">
+
+            <%= link_to crew_member_create_form_path do %>
+              <div class="signup action-item">Sign Up</div>
+            <% end %>
+          </div>
+
+          <div class="col-6 text-center">
+
+            <%= link_to login_form_url do %>
+              <div class="company-login action-item">Login</div>
+            <% end %>
+          </div>
+
+        </div>
+
+
+
+
+
+
       </div>
+
       </div>
 
 

@@ -30,9 +30,8 @@ class SessionController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = "[LOGIN FAILED] check your credentials"
-      msg = "[LOGIN ACTUAL] => ".black.bg_brown + "Failed for #{@manager['name']}".green
-      log :info, msg
-      redirect_to login_form_url
+      log :error, "[LOGIN FAILED] for #{creds[:email]}".red
+      redirect_to :login_form
 
     end
   end
