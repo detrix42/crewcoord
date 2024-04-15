@@ -1,0 +1,9 @@
+<h1><%= @manager.name %> has signed up to CrewCoord.net</h1>
+<h2>Email Verification</h2>
+
+<%= @manager.name %> just click the button below to verify
+
+<%= button_to 'Confirm Email',
+  url: "https://crewcoord.net/crew_manager_verification/confirm_token/#{@token}",
+  method: :post
+%>
