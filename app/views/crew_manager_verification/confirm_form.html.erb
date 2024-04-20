@@ -1,0 +1,38 @@
+<style>
+  .content {
+    width: 100%;
+    margin: 50px auto;
+  }
+
+  .message {
+    margin-bottom: 2rem;
+  }
+
+  .crew-manager-verification-heading{
+    color: white;
+  }
+</style>
+<div class="crew-manager-verification-heading text-center">
+  <h1>Crew Manager Verification</h1>
+</div>
+<div class="content d-flex justify-content-center flex-column align-items-center w-50">
+
+  <div class="message">
+    An email was sent to the email address you signed up with that contains a verification code.
+    <br><br>
+    Copy and paste that code into the field below:
+  </div>
+
+  <div class=" verify-form">
+    <%= form_tag('/crew_manager_verification/confirm_token', method: :post) do %>
+      <%= text_field_tag(:token, nil, placeholder: 'Paste code here...') %>
+      <%= submit_tag 'Submit' %>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+

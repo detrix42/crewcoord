@@ -6,21 +6,26 @@ console.log('crewmember.js loaded')
 //   console.log('check1')
 //   localStorage.setItem('signup_validation_ready', 'false')
 // }
-setTimeout(() => init_inputfields(), 500)
+
+
+
+// setTimeout(() => init_inputfields(), 500)
 // init_inputfields()
 
 function init_inputfields() {
   console.log('attaching validation check on input fields')
-  const req_signup_field = $('.required_signup_field')
-  req_signup_field.on('blur', function(e) {
-    e.preventDefault()
-    validate_input(this);
-  })
-  req_signup_field.on('keyup', function(e) {
-    validateForm()
-  })
-  // localStorage.setItem('signup_validation_ready', 'true')
-  window.crewcoord.signup_validation_ready = true
+  if(window.crewcoord.signup_validation_ready === false) {
+    const req_signup_field = $('.required_signup_field')
+    req_signup_field.on('blur', function(e) {
+      e.preventDefault()
+      validate_input(this);
+    })
+    req_signup_field.on('keyup', function(e) {
+      validateForm()
+    })
+    window.crewcoord.signup_validation_ready = true
+  }
+
 
 }
 

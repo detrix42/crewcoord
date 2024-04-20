@@ -11,9 +11,12 @@ class CrewMemberController < ApplicationController
     crds = creds
     @manager = CrewMember.new(creds)
     if @manager.save
-      ManagerSignupMailer.with(manager: @manager.name, token: rnd.token).deliver_later
+      @token = rnd.token 10
+      @url_prefix = Rails.configuration.url_prefix
+      ManagerConfirmation.create(token: @token, manager_id: @manager.id)
+      ManagerSignupMailer.confirm_mailer(@manager, @token).deliver_later
       flash[:success] = "Crew member created successfully"
-      redirect_to root_path
+      redirect_to crew_manager_verification_confirm_form_path
     else
       render :create_form
     end

@@ -2,8 +2,7 @@
 # include SendGrid
 
 class ManagerSignupMailer < ApplicationMailer
-  default from: 'detrix42@novasector.net'
-  layout "manager_signup_mailer"
+  default from: 'webmaster@novasector.net'.chomp
   # def company_signup_confirmation(business, manager, token)
   #   @manager = manager
   #   @company = business
@@ -30,10 +29,11 @@ class ManagerSignupMailer < ApplicationMailer
   #
   # end
 
-  def manager_signup_mailer
-    @manager = params[:manager]
-    @token = params[:token]
-    @url = 'https://crewcoord.net/login'
+  def confirm_mailer(manager, tkn)
+    @manager = manager
+    @token = tkn
+    @url = "#crewcoord.net/login"
+    @link_url = "#{Rails.configuration.url_prefix}crew_manager_verification/confirm_token"
     mail(to: @manager.email,
          subject: "CrewCord.net sign up confirmation")
   end

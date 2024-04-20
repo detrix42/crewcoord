@@ -29,4 +29,7 @@ Things you may want to cover:
     
     If there is an error, the turbo system is not
     replacing the form, it appends it outside of body element.
-    
+
+    I use javascript to add event listeners on the signup input fields. On intial load everything works fine. But if
+    the cancel button to go back to home page, and then come back to the signup page, the event listeners are no lognger
+    attached to the input fields, and the javascript isn't executed.

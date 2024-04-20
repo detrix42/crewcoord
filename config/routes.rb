@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get 'crew_member/update'
   get 'crew_member/destroy'
   get 'crew_member/create_form'
-  post 'crew_manager_verification/confirm_token/:token', to: 'crew_manager_verification#confirm_token'
+  get 'crew_manager_verification/confirm_form'
+  post 'crew_manager_verification/confirm_token/', to: 'crew_manager_verification#confirm_token'
 
 
 
