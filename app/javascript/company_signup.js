@@ -26,22 +26,22 @@ function init_inputfields() {
 
 
 //Function to handle form on submit
-$('#companySignupForm').on('submit', function(e) {
-  // Prevent the form from submitting
-  e.preventDefault()
-
-  // Validate the form
-  if(validateForm()) {
-
-    console.log("setting validation ready to false");
-    // localStorage.setItem('signup_validation_ready', 'false')
-    window.crewcoord.signup_validation_ready = false
-
-    // If the form is valid, you can submit it
-    this.submit();
-  }
-
-})
+// $('#companySignupForm').on('submit', function(e) {
+//   // Prevent the form from submitting
+//   // e.preventDefault()
+//
+//   // Validate the form
+//   if(validateForm()) {
+//
+//     console.log("setting validation ready to false");
+//     // localStorage.setItem('signup_validation_ready', 'false')
+//     window.crewcoord.signup_validation_ready = false
+//
+//     // If the form is valid, you can submit it
+//     this.submit();
+//   }
+//
+// })
 
 function validate_input(target) {
   if(target.value.trim() === '') {

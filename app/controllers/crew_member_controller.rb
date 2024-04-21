@@ -18,7 +18,8 @@ class CrewMemberController < ApplicationController
       flash[:success] = "Crew member created successfully"
       redirect_to crew_manager_verification_confirm_form_path
     else
-      render :create_form
+      flash[:error] = @manager.errors.full_messages
+      redirect_to crew_member_create_form_url
     end
   end
 

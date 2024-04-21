@@ -101,14 +101,16 @@
 
           <div class="col-6 text-center">
 
-            <%= link_to crew_member_create_form_path do %>
+            <%= link_to crew_member_create_form_path,
+                        data: {turbo_action: 'replace'} do %>
               <div class="signup action-item">Sign Up</div>
             <% end %>
           </div>
 
           <div class="col-6 text-center">
 
-            <%= link_to login_form_url do %>
+            <%= link_to login_form_url,
+                        data: {turbo_action: 'replace'} do %>
               <div class="company-login action-item">Login</div>
             <% end %>
           </div>
