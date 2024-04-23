@@ -6,9 +6,8 @@
     width: 100%;
 
     .brand {
-      margin-left: 10px;
       font-size: 3rem;
-      margin: auto 0;
+      margin: auto 0 auto 10px;
     }
 
     .nav-center {
@@ -79,7 +78,7 @@
 
   .quad-content {
     gap: 2rem;
-    color: #3eb5e0;
+    color: $zpanel-color;
     flex-wrap: wrap;
 
     .row-content2 {

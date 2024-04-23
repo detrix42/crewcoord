@@ -7,22 +7,26 @@
 
 .hero-card {
   margin: 0 auto;
+  background-color: $bg1;
 
   .hero-title {
     font-size: 3em;
+    padding: 1em 0;
+    color: $hero-title-fg;
     background-color: $hero-title-bg;
   }
 
 
 
   p {
+    color: $fg2;
     font-size: 1.5em;
   }
 }
 
 .description-panel {
   width: 70%;
-  margin: 0 auto;
+  margin: 0 auto 3rem auto;
 
   .row-with-img-left,
   .row-with-img-right {
