@@ -38,6 +38,9 @@
       padding: 1em;
     }
 
+
+
+
     .row-img-left {
       margin-right: 1rem;
     }
@@ -55,6 +58,21 @@
   .row-with-img-right {
     justify-self: end;
     margin: 10px 60px 10px auto;
+
+  }
+
+  .quad-content {
+    gap: 2rem;
+    color: #2f9bc2;
+
+    .row-content2 {
+      width: 30%;
+      flex: 1;
+      background-color: rgba(47, 155, 194, 0.1);
+      padding: 1em;
+      border-radius: 10px;
+      box-shadow: 5px 5px 15px black;
+    }
 
   }
 
