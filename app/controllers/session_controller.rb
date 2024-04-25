@@ -1,6 +1,7 @@
 require 'jdl_rnd'
 
 class SessionController < ApplicationController
+  before_action :check_manager_business, except: [:login_actual, :login_form, :signup]
   def signup
     rnd = RND.new
     @token = rnd.token
@@ -23,9 +24,8 @@ class SessionController < ApplicationController
       session[:manager] = @manager
       session[:manager_id] = @manager.id
       session[:manager_login_time] = Time.now
-      msg = "[LOGIN ACTUAL] => ".black.bg_brown + "#{@manager['name']} logged in. (Authenticated)".green
-      log :info, msg
-      fmesg =
+      msg = "#{@manager['name']} logged in. \n(Authenticated)".green
+      log :info, "[LOGIN ACTUAL] => ".black.bg_brown + msg
       flash[:notice] = strip_color_codes(msg)
       redirect_to root_path
     else
