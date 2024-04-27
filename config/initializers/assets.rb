@@ -20,6 +20,8 @@ Rails.application.config.assets.precompile +=
   %w( jquery.min.js jquery_ujs.min.js home.js company_signup.js )
 Rails.application.config.assets.precompile +=
   %w( manager_login.js crewmanager.js )
+Rails.application.config.assets.precompile +=
+  %w( shared/validate_required_fields.js )
 
 # config/initializers/assets.rb
 Rails.application.config.assets.precompile +=

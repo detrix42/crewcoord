@@ -1,7 +1,7 @@
 require 'jdl_rnd'
 
 class SessionController < ApplicationController
-  before_action :check_manager_business, except: [:login_actual, :login_form, :signup]
+  before_action :check_manager_business, except: [:login_actual, :login_form, :signup, :logout]
   def signup
     rnd = RND.new
     @token = rnd.token
@@ -26,8 +26,13 @@ class SessionController < ApplicationController
       session[:manager_login_time] = Time.now
       msg = "#{@manager['name']} logged in. \n(Authenticated)".green
       log :info, "[LOGIN ACTUAL] => ".black.bg_brown + msg
-      flash[:notice] = strip_color_codes(msg)
-      redirect_to root_path
+
+      if @manager.business_id.present?
+        flash[:notice] = strip_color_codes(msg)
+        redirect_to root_path
+      else
+        redirect_to business_create_path
+      end
     else
       flash[:error] = "[LOGIN FAILED] check your credentials"
       log :error, "[LOGIN FAILED] for #{creds[:email]}".red

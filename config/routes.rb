@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
-  post 'crew_member/create'
+  get 'crew_member/create'
+  post 'crew_member/create', to: 'crew_member#create_actual'
   get 'crew_member/fetch'
   get 'crew_member/update'
   get 'crew_member/destroy'
-  get 'crew_member/create_form'
+
   get 'crew_manager_verification/confirm_form'
   post 'crew_manager_verification/confirm_token/', to: 'crew_manager_verification#confirm_token'
 
-
-
   get 'business/create'
-  get 'signup', to: 'session#signup'
+  post 'business/create', to: 'business#create_actual'
+
   get 'login_form', to: 'session#login_form'
 
   get 'home/index', to: 'home#landing'

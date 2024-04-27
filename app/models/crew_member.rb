@@ -11,4 +11,5 @@ class CrewMember < ApplicationRecord
   scope :crew_manager, -> (manager_email) {
     where(email: manager_email, is_crew_manager: true)
   }
+
 end

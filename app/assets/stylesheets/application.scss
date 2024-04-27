@@ -40,13 +40,12 @@ input {
     border-bottom: none !important;
     box-shadow: 0 0 10px rgb(130, 219, 246) !important;
   }
-
-
+  .need-required {
+    box-shadow: 0 0 5px red;
+  }
 }
 
-.need-required {
-  box-shadow: 0 0 5px red;
-}
+
 
 .btn-common {
   border: 1px solid var(--form-signup-btn-border-color);
@@ -68,6 +67,16 @@ a {
 
   &:visited {
     color: #425a5b;
+  }
+}
+
+.form-container {
+  height: calc(99vh - var(--top-nav-height));
+  align-items: center;
+  gap: 1rem;
+
+  .button-row {
+    justify-content: space-around;
   }
 }
 

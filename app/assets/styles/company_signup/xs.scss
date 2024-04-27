@@ -1,17 +1,21 @@
-@media only screen and (min-width: 200px) and (max-width: 599px) {
-  .main-container {
+@media only screen and (min-width: 200px) {
+  .form-container {
     padding-top: 1rem;
     height: auto;
+
+    .need-required {
+      box-shadow: 0 0 5px red;
+    }
 
 
     .signup-card {
       margin: 0 auto;
 
       width: 98vw;
-      gap: 10px;
+      gap: 20px;
 
-      border: 1px solid #8c8c4d;
-      border-radius: .5rem;
+      //border: 1px solid #8c8c4d;
+      //border-radius: .5rem;
 
       .field {
         margin: 4px 8px;
@@ -31,28 +35,7 @@
         text-align: center;
       }
 
-      input {
-        background-color: var(--form-input-fields-bg);
-        border: none;
-        border-bottom: 2px solid var(--form-border-color);
-        color: white;
-        padding: 3px 5px;
-        font-size: var(--form-font-size);
 
-        &:active, &:focus {
-          outline: none;
-          border-bottom: none;
-          box-shadow: 0 0 10px rgb(130, 219, 246);
-        }
-      }
-
-      input[type="submit"] {
-
-      }
-
-      .need_required {
-        box-shadow: 0 0 5px red;
-      }
     }
 
   }
@@ -61,9 +44,10 @@
     font-size: var(--header2-font-size);
     background-color: var(--header2-bg-color);
     height: var(--header2-height);
+    min-width: 400px;
 
     padding-left: 10px;
-    min-width: 400px;
+    margin-bottom: 1rem;
 
     border-top-left-radius: var(--form-border-radus);
     border-top-right-radius: var(--form-border-radus);
@@ -71,16 +55,17 @@
 
   .company-col {
     flex: 1;
-
-    margin: 1rem;
-    border: 1px solid var(--form-border-color);
-    border-top-left-radius: var(--form-border-radus);
-    border-top-right-radius: var(--form-border-radus);
+    //
+    //margin: 1rem;
+    //border: 1px solid var(--form-border-color);
+    //border-top-left-radius: var(--form-border-radus);
+    //border-top-right-radius: var(--form-border-radus);
 
     input[name='business[name]'],
     input[name='business[address1]'],
-    input[name='business[address2]'] {
-
+    input[name='business[address2]'],
+    input[name='business[phone]']{
+      margin-bottom: 1rem;
     }
 
 
@@ -96,7 +81,8 @@
 
     .input-state {
       flex: 0 1;
-      width: 70px;
+      width: 100px;
+      padding: 0 1rem;
     }
 
     .input-city,
@@ -110,38 +96,27 @@
     }
 
     .input-city {
-      width: 10px;
+      width: 10%;
     }
     .input-zipcode {
       width: 20%;
     }
   }
 
-  .crew-manager-col {
-    flex: 1;
-    margin: 1rem;
-    border: 1px solid var(--form-border-color);
-    border-top-left-radius: var(--form-border-radus);
-    border-top-right-radius: var(--form-border-radus);
-
-  }
-
-
-
   .button-row {
-    --btn-padding: 3px 6px;
+    $btn-padding: 3px 6px;
     height: 40px;
     margin: 1rem;
 
     .company-form-submit {
-      padding: var(--btn-padding);
+      padding: $btn-padding;
     }
 
     .btn-cancel {
       background-color: var(--btn-cancel-bg-color);
       border-color: var(--btn-cancel-bdr-color);
       color: var(--btn-cancel-fg-color);
-      padding: var(--btn-padding);
+      padding: $btn-padding;
       text-decoration: none;
     }
   }

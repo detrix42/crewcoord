@@ -10,23 +10,24 @@
         </div>
         <div class="d-flex flex-column field mt-4">
           <%= f.label :name %>
-          <%= f.text_field :name, class: 'required_signup_field',
+          <%= f.text_field :name, class: 'required-signup-field',
           autofocus: true %>
         </div>
 
         <div class="d-flex flex-column field mt-2">
           <%= f.label :email %>
-          <%= f.text_field :email, class: 'required_signup_field' %>
+          <%= f.text_field :email, class: 'required-signup-field' %>
         </div>
 
       <div class="d-flex flex-column field mt-2 w-50">
         <%= f.label :phone %>
-        <%= f.text_field :phone, class: 'required_signup_field' %>
+        <%= f.text_field :phone, class: 'required-signup-field' %>
       </div>
 
         <div class="d-flex flex-column field mt-2">
           <%= f.label :password %>
-          <%= f.password_field :password, class: 'required_signup_field' %>
+          <%= f.password_field :password, class: 'required-signup-field',
+          id: 'signup-password1'%>
         </div>
 
         <div class="d-flex flex-column field mt-2">
@@ -37,19 +38,13 @@
             </span>
           </div>
 
-          <%= f.password_field :password_confirmation, class: 'required_signup_field' %>
+          <%= f.password_field :password_confirmation,
+                               class: 'required-signup-field',
+                               id: 'signup-password2'%>
         </div>
 
     </div>
-  <div class="dflexr-jcsb button-row">
-
-    <%= link_to 'Cancel', root_path, class: 'btn-common btn-cancel' %>
-
-    <%= f.button 'Submit Form', id: 'form-submit-button',
-                 class: 'btn-common manager-form-submit', disabled: true,
-                 data: { turbo_action: 'replace',
-                         disable_with: 'Processing...' } %>
-  </div>
+  <%= render 'shared/cancel_submit_btn_row', f: f %>
 
 <% end %>
 

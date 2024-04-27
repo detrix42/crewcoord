@@ -1,11 +1,22 @@
 class ApplicationController < ActionController::Base
   include AlphaHelper
+
   before_action :set_log_tag # adds a prefix to log entries
+  before_action :manager # method located in AlphaHelper
+
 
   # before_action :current_user, except: %i[logging_in register]
   add_flash_types :error, :success
 
   protected
+  def check_manager_business
+    if @manager.present?
+      unless @manager.business_id.present?
+        redirect_to business_create_path
+      end
+    end
+  end
+
   def set_log_tag
     @logtag = "<#{params[:controller]}::#{params[:action]}>".bold
   end

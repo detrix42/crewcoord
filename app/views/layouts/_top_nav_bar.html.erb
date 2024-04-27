@@ -92,51 +92,42 @@
         </div>
 
     <% else %>
-      <div class="d-none d-md-flex flex-column justify-content-center w-100 nav-actions">
-        <div class="nav-action-header txt-company">
-          Crew Manager
-        </div>
-
-        <div class="d-flex justify-content-between">
-
-          <div class="col-6 text-center">
-
-            <%= link_to crew_member_create_form_path,
-                        data: {turbo_action: 'replace'} do %>
-              <div class="signup action-item">Sign Up</div>
-            <% end %>
+        <div class="d-none d-md-flex flex-column justify-content-center w-100 nav-actions">
+          <div class="nav-action-header txt-company">
+            Crew Manager
           </div>
 
-          <div class="col-6 text-center">
+          <div class="d-flex justify-content-between">
 
-            <%= link_to login_form_url,
-                        data: {turbo_action: 'replace'} do %>
-              <div class="company-login action-item">Login</div>
-            <% end %>
+            <div class="col-6 text-center">
+
+              <%= link_to crew_member_create_path,
+                          data: {turbo_action: 'replace'} do %>
+                <div class="signup action-item">Sign Up</div>
+              <% end %>
+            </div>
+
+            <div class="col-6 text-center">
+
+              <%= link_to login_form_url,
+                          data: {turbo_action: 'replace'} do %>
+                <div class="company-login action-item">Login</div>
+              <% end %>
+            </div>
           </div>
-
         </div>
-
-
-
-
-
-
       </div>
-
-      </div>
-
 
     <% end %>
 
-  <div class="dflexc-jcc menu-action">
-    <div class="open-navpanel">
-      <a> <%# click action handled in javascript file home.js  %>
-        <%= image_tag 'icon_open_nav_panel01.png' %>
-      </a>
-    </div>
+    <div class="dflexc-jcc menu-action">
+      <div class="open-navpanel">
+        <a> <%# click action handled in javascript file home.js  %>
+          <%= image_tag 'icon_open_nav_panel01.png' %>
+        </a>
+      </div>
 
-  </div>
+    </div>
   </div>
 
 </nav>
@@ -154,7 +145,7 @@
   </div>
 
   <div class="dflexc-jcc nav-actions">
-      <%= link_to crew_member_create_form_url, data: {turbo_action: 'replace'}, class: 'nav-item' do %>
+      <%= link_to crew_member_create_path, data: {turbo_action: 'replace'}, class: 'nav-item' do %>
         <div class="company-signup">Crew Manager Sign Up</div>
       <% end %>
       <div class="manger-login nav-item">Crew Manager Login</div>

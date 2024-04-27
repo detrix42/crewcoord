@@ -12,7 +12,4 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-window.crewcoord = {
-  signup_validation_ready: false,
-  signup_form_valid: false
-}
+
