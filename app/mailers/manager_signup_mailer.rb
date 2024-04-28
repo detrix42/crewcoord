@@ -2,7 +2,7 @@
 # include SendGrid
 
 class ManagerSignupMailer < ApplicationMailer
-  default from: '<no-reply>@novasector.net'.chomp
+  default from: 'webmaster@novasector.net'.chomp
 
   def confirm_mailer(manager, tkn)
     @manager = manager
