@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   post 'business/create', to: 'business#create_actual'
 
   get 'login_form', to: 'session#login_form'
+  get 'password_reset', to: 'session#password_reset'
+  post 'password_reset', to: 'session#password_update'
 
   get 'home/index', to: 'home#landing'
   post 'logout', to: 'session#logout'

@@ -12,4 +12,5 @@ class CrewMember < ApplicationRecord
     where(email: manager_email, is_crew_manager: true)
   }
 
+
 end

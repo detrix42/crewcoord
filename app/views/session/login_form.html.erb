@@ -34,7 +34,8 @@
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-between">
               <%= link_to 'Cancel', root_path, class: 'btn btn-secondary' %>
-<!--              <button class="btn btn-primary" type="button">Login</button>-->
+
+              <%= link_to 'Password Reset', password_reset_path, class: 'btn btn-info' %>
 
               <%= f.button 'Login', id: 'login-submit-button',
                            class: 'btn btn-primary form-submit', disabled: false,
