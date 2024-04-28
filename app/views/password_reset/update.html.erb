@@ -1,0 +1,70 @@
+<% provide :title, "New Password Form" %>
+<% content_for :moreCSS do %>
+  <%= stylesheet_link_tag "forms", media: 'screen' %>
+<% end %>
+
+<% content_for :moreJS do %>
+  <%= javascript_include_tag "shared/validate_required_fields" %>
+<% end %>
+<div class="container">
+
+  <div class="d-flex flex-column align-items-center h-100" style="margin-top: 60px;">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: "col-5 flash #{name}" %>
+    <% end %>
+
+    <div class="row justify-content-center w-100">
+      <div class="col-6">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-header">
+              <h2 class="text-center mb-4 card-header-txt">Password Reset Form</h2>
+            </div>
+
+            <%= form_with(url: password_reset_update_path,
+                          class: 'd-flex flex-column justify-content-center',
+                          method: :post, local: true) do |f| %>
+
+              <div class="d-flex flex-column mb-3">
+                <%= f.label :password, 'Password', class: "sr-only" %>
+                <%= f.password_field :password,  class: 'required-signup-field',
+                id: 'signup-password1'%>
+              </div>
+
+              <div class="d-flex flex-column field mt-2">
+                <div class="d-flex justify-content-between">
+                  <%= f.label :password_confirmation %>
+                  <span class="displayOff" id="pass-do-not-match-txt">
+                    *does not match password
+                  </span>
+                </div>
+
+                <%= f.password_field :password_confirmation,
+                                     class: 'required-signup-field',
+                                     id: 'signup-password2'%>
+              </div>
+
+              <%= render 'shared/cancel_submit_btn_row', f: f %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  $(document).on('turbo:load', () => {
+
+    setTimeout(() => {
+      init_inputfields()
+    }, 300)
+
+  })
+
+  setTimeout(() => {
+    $('.flash').fadeOut('slow')
+  }, 5000)
+</script>
+

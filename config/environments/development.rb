@@ -80,6 +80,7 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
 
   # port 4281 gets routed to 4280 on my desktop; for testing
-  config.url_prefix = 'http://crewcoord.net:42081/'
+  # config.url_prefix = 'http://crewcoord.net:42081/'
+  config.url_prefix = 'http://localhost:4280/'
   config.hosts << 'crewcoord.net:42081'
 end

@@ -41,16 +41,6 @@ class SessionController < ApplicationController
     end
   end
 
-  def password_recovery
-    rnd = RND.new
-    @token = rnd.token(10)
-
-  end
-
-  def password_update
-    @manager.update(password: params[:password])
-  end
-
   def logout
     _date = theDate.black.bg_brown
     log :info, "[LOGOUT::#{_date}] #{manager['name']}".green.bg_black

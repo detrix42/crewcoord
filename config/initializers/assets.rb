@@ -13,7 +13,7 @@ Rails.application.config.assets.paths << 'app/assets/styles'
 
 Rails.application.config.assets.precompile += %w( home.css
    company_signup.css manager_login.css crewmanager.css )
-
+Rails.application.config.assets.precompile += %w( forms.css )
 
 
 Rails.application.config.assets.precompile +=

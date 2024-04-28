@@ -10,9 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_30_023211) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_28_141550) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
   create_table "businesses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -54,6 +53,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_30_023211) do
   create_table "manager_confirmations", force: :cascade do |t|
     t.string "manager_id"
     t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "password_reset_codes", force: :cascade do |t|
+    t.string "code"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
