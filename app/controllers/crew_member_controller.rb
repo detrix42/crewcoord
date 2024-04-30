@@ -5,9 +5,10 @@ class CrewMemberController < ApplicationController
     rnd = RND.new
     @manager = CrewMember.new(creds)
     if @manager.save
-      @token = rnd.token 10
+      @token = rnd.token 4
       @url_prefix = Rails.configuration.url_prefix
-      ManagerConfirmation.create(token: @token, manager_id: @manager.id)
+      session[:vorgon] = @manager
+      ManagerConfirmation.create(token: @token, manager_id: @manager[:id])
       ManagerSignupMailer.confirm_mailer(@manager, @token).deliver_later
       flash[:notice] = "Crew member created successfully"
       redirect_to crew_manager_verification_confirm_form_path

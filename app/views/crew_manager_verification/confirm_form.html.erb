@@ -12,6 +12,11 @@
     color: white;
   }
 </style>
+
+<% if flash[:alert].present? %>
+  <%= content_tag :div, flash[:alert], class: "col-5 flash alert" %>
+<% end %>
+
 <div class="crew-manager-verification-heading text-center">
   <h1>Crew Manager Verification</h1>
 </div>
@@ -32,7 +37,6 @@
     <% end %>
   </div>
 </div>
-
 
 
 

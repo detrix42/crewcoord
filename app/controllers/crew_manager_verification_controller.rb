@@ -6,14 +6,21 @@ class CrewManagerVerificationController < ApplicationController
   end
 
   def confirm_token
-    tkn = ManagerConfirmation.find_by(token: params[:token])
-    if tkn and Time.now < tkn.created_at + 5.minutes
-      manager = CrewMember.find_by(id: tkn.manager_id)
-      if manager
+    manager = CrewMember.find_by(id: session[:vorgon]["id"])
+    mc = ManagerConfirmation.find_by(manager_id: manager["id"])
+    tkn = mc[:token]
+    exp_time = mc.created_at + 5.minutes
+    tNow = Time.now.utc
+    if tkn.present? and tNow < exp_time
+
+      # manager = CrewMember.find_by(id: tkn.manager_id)
+      ptkn = params[:token]
+      if manager.present? and tkn == ptkn
         manager.update(email_verified: true, is_crew_manager: true)
         flash[:success] = "Email verified successfully!"
-        tkn.destroy
+        mc.destroy
 
+        session[:vorgon] = nil
         # auto login in
         session[:manager_id] = manager.id
         session[:manager] = manager
@@ -22,22 +29,23 @@ class CrewManagerVerificationController < ApplicationController
         # now crew manager needs to create a business profile
         redirect_to business_create_path
       else
-        flash[:notice] = "Email confirmation failed!"
-        redirect_to root_url
+        tMinus = ((exp_time - tNow) / 60).ceil
+        flash[:alert] = "Verification code failed!\nYou have #{tMinus} minutes left to try again"
+        redirect_to crew_manager_verification_confirm_form_path
       end
     else
-      if Time.now < tkn.created_at + 5.minutes
-        flash[:notice] = "Token has expired"
+        flash[:alert] = "Token has expired\nYou will need to re-submit "
         # if token expires, delete token and crew manager
         # associated with it, so the user can try again.
         # Must delete since there can be no duplicate
         # name or email.
-        tkn.destroy
+        mc.destroy
         manager.destroy
-      else
-        flash[:notice] = "Invalid token"
-      end
-      redirect_to root_url
+        session[:vorgon] = nil
+
+        redirect_to crew_member_create_path
     end
+    # redirect_to root_url
   end
 end
+
