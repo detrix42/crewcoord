@@ -30,7 +30,7 @@ class CrewManagerVerificationController < ApplicationController
         redirect_to business_create_path
       else
         tMinus = ((exp_time - tNow) / 60).ceil
-        flash[:alert] = "Verification code failed!\nYou have #{tMinus} minutes left to try again"
+        flash[:alert] = "Verification code failed!<br/>You have #{tMinus} minutes left to try again"
         redirect_to crew_manager_verification_confirm_form_path
       end
     else

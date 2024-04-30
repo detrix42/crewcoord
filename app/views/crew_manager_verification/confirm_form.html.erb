@@ -14,7 +14,7 @@
 </style>
 
 <% if flash[:alert].present? %>
-  <%= content_tag :div, flash[:alert], class: "col-5 flash alert" %>
+  <%= content_tag :div, flash[:alert].html_safe, class: "col-5 flash alert" %>
 <% end %>
 
 <div class="crew-manager-verification-heading text-center">
