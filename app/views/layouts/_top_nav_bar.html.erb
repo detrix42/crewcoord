@@ -1,7 +1,10 @@
 <nav class="d-flex justify-content-between w-100 w-md-90 top-nav">
-  <div class="brand">
-    CrewCoord
-  </div>
+    <%= link_to root_path, class: 'brand-link' do %>
+      <div class="brand">
+        CrewCoord
+      </div>
+    <% end %>
+
   <div class="nav-center">
     <%= theDate %>
   </div>

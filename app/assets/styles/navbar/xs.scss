@@ -1,13 +1,27 @@
+@import "myVariables";
+
 @media only screen and (min-width: 200px) {
   .top-nav {
     //align-items: center;
     background: #232a33;
     color: #62c9cc;
     width: 100%;
+    height: $top-nav-height;
 
     .brand {
+      width: 100%;
       font-size: 3rem;
-      margin: auto 0 auto 10px;
+      color: #3eb5e0;
+    }
+
+    .brand-link {
+
+      text-align: center;
+
+      &:hover {
+        //color: darkseagreen;
+        text-shadow: 1px 1px 15px yellowgreen;
+      }
     }
 
     .nav-center {

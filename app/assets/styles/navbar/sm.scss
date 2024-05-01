@@ -1,14 +1,6 @@
+@import "myVariables";
 @media only screen and (min-width: 601px) {
   .top-nav {
-    background: #232a33;
-    color: #62c9cc;
-    height: $top-nav-height;
-
-    .brand {
-      text-align: center;
-      font-size: 3rem;
-      width: 20%;
-    }
 
     .nav-actions {
       display: none;
