@@ -11,10 +11,10 @@
 <%= manager.name %> Thank you for signing up. We now need you to create a
 company profile, using the following form:
 
-<div class="container d-flex flex-column justify-content-center form-container" data-turbo-action="replace">
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: "col-5 flash #{name}" %>
-  <% end %>
+<%= render 'shared/flash_msg' %>
+
+<div class="container d-flex flex-column justify-content-center
+  form-container" data-turbo-action="replace">
   <%= render 'company_form_fields' %>
 </div>
 

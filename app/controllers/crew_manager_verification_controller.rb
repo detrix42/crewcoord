@@ -30,11 +30,11 @@ class CrewManagerVerificationController < ApplicationController
         redirect_to business_create_path
       else
         tMinus = ((exp_time - tNow) / 60).ceil
-        flash[:alert] = "Verification code failed!<br/>You have #{tMinus} minutes left to try again"
+        flash[:error] = "Verification code failed!<br/>You have #{tMinus} minutes left to try again"
         redirect_to crew_manager_verification_confirm_form_path
       end
     else
-        flash[:alert] = "Token has expired\nYou will need to re-submit "
+        flash[:error] = "Token has expired\nYou will need to re-submit "
         # if token expires, delete token and crew manager
         # associated with it, so the user can try again.
         # Must delete since there can be no duplicate

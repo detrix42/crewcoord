@@ -1,3 +1,12 @@
+<% provide :title, "Crew Member Verification" %>
+<% content_for :moreCSS do %>
+  <%= stylesheet_link_tag "forms", media: 'screen' %>
+<% end %>
+
+<% content_for :moreJS do %>
+  <%= javascript_include_tag 'shared/global_functions' %>
+<% end %>
+
 <style>
   .content {
     width: 100%;
@@ -13,21 +22,28 @@
   }
 </style>
 
-<% if flash[:alert].present? %>
-  <%= content_tag :div, flash[:alert].html_safe, class: "col-5 flash alert" %>
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: "col-5 flash #{name}" %>
 <% end %>
 
 <div class="crew-manager-verification-heading text-center">
   <h1>Crew Manager Verification</h1>
 </div>
 <div class="content d-flex justify-content-center flex-column align-items-center w-50">
+  <%= render 'shared/flash_msg' %>
+
+  <div class="flash-container flash-position-error">
+    <div class="col-5 flash error">
+      flash error message goes here
+    </div>
+  </div>
 
   <div class="message">
-    An email was sent to the email address you signed up with that contains a verification code.
+    <p>An email was sent to the email address you signed up with that contains a verification code.</p>
     <br>
-    The email will very likely end up in your <span style="color: red">spam box</span>.
+    <p>The email will very likely end up in your <span style="color: red">spam box</span>.</p>
     <br>
-    Copy and paste that code into the field below:
+    <p>Copy and paste that code into the field below:</p>
   </div>
 
   <div class=" verify-form">
@@ -37,6 +53,18 @@
     <% end %>
   </div>
 </div>
+<script type="text/javascript" charset="utf-8">
+  $(document).on('turbo:load', () => {
+
+    setTimeout(() => {
+      init_inputfields()
+    }, 300)
+
+  })
+
+  flash_fade()
+
+</script>
 
 
 

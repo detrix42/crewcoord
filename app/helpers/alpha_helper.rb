@@ -14,7 +14,7 @@ module AlphaHelper
       'th'
                  end
 
-    dt.strftime "%A, %b %d#{day_suffix} %Y"
+    dt.strftime "%a, %b %d#{day_suffix} %Y"
   end
 
   def manager

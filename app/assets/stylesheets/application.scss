@@ -80,27 +80,92 @@ a {
   }
 }
 
+.flash-container {
+  position: absolute;
+  width: 50%;
+  height: 100px;
+
+}
+
 .flash {
   margin: 0 auto;
   font-size: var(--form-font-size);
   border-radius: 1rem;
+  box-shadow: 0 5px 16px black;
 }
 
+//  .alert, .notice,
+//  .success, .error {
+//    text-align: center;
+//  }
+//
+//  .success {
+//    background: palegreen;
+//    border: 1px solid green;
+//    color: darkgreen;
+//  }
+//
+//  .notice {
+//    background: #4d85ff;
+//    border: 1px solid #abceff;
+//    color: #003654;
+//  }
+//
+//  .alert {
+//    background-color: rgba(255, 165, 0, 0.61);
+//    border: 1px solid yellow;
+//    color: #2E2F30;
+//  }
+//
+//  .error {
+//    background: rgba(255, 0, 0, 0.58);
+//    border: 1px solid darkred;
+//    color: yellow;
+//  }
+//}
+
+
+.flash.alert,
 .flash.notice,
+.flash.success,
 .flash.error {
   text-align: center;
 }
 
+
+.flash.success {
+  background: #1a701a;
+  border: 2px solid #62b462;
+  color: #75da75;
+}
+
 .flash.notice {
-  background: palegreen;
-  border: 1px solid green;
-  color: darkgreen;
+  background: #4d85ff;
+  border: 2px solid #697c98;
+  color: #324059;
+}
+
+.flash.alert {
+  background-color: rgba(255, 165, 0, 0.61);
+  border: 1px solid yellow;
+  color: #2E2F30;
 }
 
 .flash.error {
-  background: red;
-  border: 1px solid darkred;
-  color: yellow;
+  background: rgb(128, 73, 73);
+  border: 2px solid #930000;
+  color: #ffcc00;
+  text-shadow: 1px 1px 3px black;
+}
+
+// global position for flash message
+// this may not be suitable for all
+// pages.
+.flash-position-success,
+.flash-position-error {
+  top: 17%;
+  left: 25%;
+  height: 100px;
 }
 
 

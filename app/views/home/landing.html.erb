@@ -2,9 +2,7 @@
 <% content_for :moreCSS do %>
   <%= stylesheet_link_tag "home", media: 'screen' %>
 <% end %>
-<% flash.each do |name, msg| %>
-  <%= content_tag :div, msg, class: "col-5 flash #{name}", id: 'flash-msg' %>
-<% end %>
+<%= render 'shared/flash_msg' %>
 
 <div class="w-50 p-5 pb-0 mb-4 mt-5 rounded-3 text-center hero-card">
   <div class="hero-title text-center">

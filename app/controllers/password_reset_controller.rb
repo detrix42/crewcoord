@@ -30,10 +30,10 @@ class PasswordResetController < ApplicationController
     @reset = PasswordResetCode.find_by(code: @code, email: @email)
     if @reset.present?
       @reset.destroy
-      flash[:notice] = "Password reset code verifcation successful"
+      flash[:success] = "Password reset code verifcation successful"
       redirect_to password_reset_update_path
     else
-      flash[:alert] = "Password reset failed"
+      flash[:error] = "Password reset failed"
       redirect_to password_reset_reset_path
     end
   end
@@ -52,7 +52,7 @@ class PasswordResetController < ApplicationController
       session.delete(:password_reset_email)
       msg = "Successfully updated password"
       log :info, "[PASSWORD_RESET] ==>".cyan + msg.green
-      flash[:notice] = msg
+      flash[:success] = msg
       redirect_to login_form_path
     end
   end

@@ -28,7 +28,7 @@ class SessionController < ApplicationController
       log :info, "[LOGIN ACTUAL] => ".black.bg_brown + msg
 
       if @manager.business_id.present?
-        flash[:notice] = strip_color_codes(msg)
+        flash[:success] = strip_color_codes(msg)
         redirect_to root_path
       else
         redirect_to business_create_path

@@ -1,13 +1,17 @@
 <nav class="d-flex justify-content-between w-100 w-md-90 top-nav">
     <%= link_to root_path, class: 'brand-link' do %>
+    <div class="d-flex flex-column">
       <div class="brand">
         CrewCoord
       </div>
+      <div class="dateStamp">
+        <%= theDate %>
+      </div>
+
+    </div>
+
     <% end %>
 
-  <div class="nav-center">
-    <%= theDate %>
-  </div>
   <div class="d-flex justify-content-center nav-actions-container">
     <% if manager.present? %>
 

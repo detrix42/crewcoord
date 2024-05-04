@@ -4,13 +4,13 @@
 <% end %>
 
 <% content_for :moreJS do %>
+  <%= javascript_include_tag 'shared/global_functions' %>
   <%= javascript_include_tag 'shared/validate_required_fields' %>
 <% end %>
 <div class="container d-flex flex-column justify-content-center form-container"
      data-turbo-action="replace">
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: "col-5 flash #{name}" %>
-  <% end %>
+  <%= render 'shared/flash_msg' %>
+
   <%= render 'crew_member_signup_form_fields' %>
 
 
@@ -24,9 +24,7 @@
 
   })
 
-  setTimeout(() => {
-    $('.flash').fadeOut('slow')
-  }, 5000)
+  flash_fade()
 
 </script>
 

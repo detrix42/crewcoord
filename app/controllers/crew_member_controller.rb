@@ -10,10 +10,10 @@ class CrewMemberController < ApplicationController
       session[:vorgon] = @manager
       ManagerConfirmation.create(token: @token, manager_id: @manager[:id])
       ManagerSignupMailer.confirm_mailer(@manager, @token).deliver_later
-      flash[:notice] = "Crew member created successfully"
+      flash[:success] = "Crew member created successfully"
       redirect_to crew_manager_verification_confirm_form_path
     else
-      flash[:alert] = @manager.errors.full_messages
+      flash[:error] = @manager.errors.full_messages.join('<br/>').html_safe
       redirect_to crew_member_create_url
     end
 

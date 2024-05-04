@@ -9,9 +9,14 @@
 <div class="container">
 
 <div class="d-flex flex-column justify-content-center align-items-center h-100">
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: "col-5 flash #{name}" %>
-  <% end %>
+
+    <% flash.each do |name, msg| %>
+      <div class="flash-container">
+        <%= content_tag :div, msg, class: "col-5 flash #{name}" %>
+      </div>
+    <% end %>
+
+
 
   <div class="row justify-content-center w-100">
     <div class="col-6">
