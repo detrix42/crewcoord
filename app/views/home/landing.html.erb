@@ -18,34 +18,66 @@
 
 <div class="d-flex flex-column justify-content-center description-panel">
 
-  <div class="d-flex justify-content-between w-60 mt-5 quad-content">
-    <div class="row-content2">With Crew Coord, you can effortlessly create, manage, and monitor multiple
-      crews, assigning tasks and responsibilities with ease. Our advanced scheduling
-      system allows you to set up recurring schedules, make real-time updates,
-      and even account for last-minute changes. The platform's intelligent
-      algorithms optimize crew assignments, taking into consideration factors
-      such as skill sets, availability, and location to maximize productivity.
+  <div class="d-flex justify-content-between w-60 mt-5 lifted-card-content">
+    <div class="row-content1">
+      <p>With Crew Coord, you can effortlessly create, manage, and monitor multiple
+        crews, assigning tasks and responsibilities with ease. Our advanced scheduling
+        system allows you to set up recurring schedules, make real-time updates,
+        and even account for last-minute changes. The platform's intelligent
+        algorithms optimize crew assignments, taking into consideration factors
+        such as skill sets, availability, and location to maximize productivity.</p>
+
+      <p>In addition, Crew Coord offers robust reporting and analytics features,
+        providing valuable insights into your crew's performance and productivity.
+        With this data at your fingertips, you can make data-driven decisions to
+        optimize your operations and drive growth.</p>
     </div>
 
-    <div class="row-content2">
-      Crew Coord also facilitates seamless communication between team members and
-      management, enabling real-time updates and notifications. The built-in messaging
-      system ensures that everyone is on the same page, fostering collaboration and
-      enhancing overall performance.
+    <div class="row-content1">
+      <p>Crew Coord also facilitates seamless communication between team members and
+        management, enabling real-time updates and notifications. The built-in messaging
+        system ensures that everyone is on the same page, fostering collaboration and
+        enhancing overall performance.</p>
+
+      <p>Experience the power of Crew Coord and revolutionize the way you manage
+        your crews and schedules. Get started today and discover the difference it can
+        make for your organization.</p>
     </div>
   </div>
 
-  <div class="d-flex justify-content-between w-60 mt-5 quad-content">
-    <div class="row-content2">In addition, Crew Coord offers robust reporting and analytics features,
-      providing valuable insights into your crew's performance and productivity.
-      With this data at your fingertips, you can make data-driven decisions to
-      optimize your operations and drive growth.</div>
+  <div class="d-flex justify-content-between w-60 mt-5
+               lifted-card-content ">
 
-    <div  class="row-content2">Experience the power of Crew Coord and revolutionize the way you manage
-      your crews and schedules. Get started today and discover the difference it can
-      make for your organization.</div>
+      <div class="d-flex flex-column card-contents">
+        <div class="d-flex justify-content-between tier-header">
+          <h3 class="tier-txt">Tier 1</h3>
+          <h4 class="tier-sub-txt">1-5 Crews</h4>
+        </div>
+
+        <p>Description goes here</p>
+        <%= link_to 'Register', crew_member_create_path(tier: 1), class: 'sign-link' %>
+      </div>
+
+      <div class="d-flex flex-column card-contents">
+        <div class="d-flex justify-content-between tier-header">
+          <h3 class="tier-txt">Tier 2</h3>
+          <h4 class="tier-sub-txt">5-10 Crews</h4>
+        </div>
+        <p>Description goes here</p>
+        <%= link_to 'Register', crew_member_create_path(tier: 2), class: 'sign-link' %>
+      </div>
+
+    <div class="d-flex flex-column card-contents">
+      <div class="d-flex justify-content-between tier-header">
+        <h3 class="tier-txt">Tier 3</h3>
+        <h4 class="tier-sub-txt">10+ Crews</h4>
+      </div>
+      <p>Description goes here</p>
+      <%= link_to 'Register', crew_member_create_path(tier: 3), class: 'sign-link' %>
+    </div>
+
+
   </div>
-
 </div>
 <footer class="h-50">
 

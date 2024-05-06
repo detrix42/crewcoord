@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_28_141550) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_06_034504) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -64,7 +64,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_28_141550) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "shards", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "crew_member_id", null: false
+    t.string "number"
+    t.string "exp_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["crew_member_id"], name: "index_shards_on_crew_member_id"
+  end
+
   add_foreign_key "crew_members", "businesses"
   add_foreign_key "crews", "businesses"
   add_foreign_key "crews", "crew_members"
+  add_foreign_key "shards", "crew_members"
 end

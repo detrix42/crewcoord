@@ -59,6 +59,42 @@
 
   }
 
+  .lifted-card-content {
+    gap: 2rem;
+    color: #3eb5e0;
+    flex-wrap: wrap;
+
+    .row-content1,
+    .card-contents {
+      flex: 1;
+      background-color: rgba(47, 155, 194, 0.1);
+      padding: 1em;
+      border-radius: 10px;
+      box-shadow: 5px 5px 15px black;
+
+      h3.tier-txt {
+        flex: 1;
+        padding-left: 1rem;
+        background-image: $h3-tier-gradient-left-bg;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+      }
+
+      h4.tier-sub-txt {
+        background-image: $h3-tier-gradient-right-bg;
+        color: white;
+        font-size: .8em;
+        padding-right: 1rem;
+        align-content: center;
+      }
+    }
+
+    .card-contents {
+
+    }
+
+  }
+
   .nav-panel {
     display: none;
     z-index: 99;
@@ -95,12 +131,12 @@
     display: none;
   }
 
-  .quad-content {
+  .lifted-card-content {
     gap: 2rem;
     color: $zpanel-color;
     flex-wrap: wrap;
 
-    .row-content2 {
+    .row-content1 {
       //width: 100%;
 
       background-color: rgba(47, 155, 194, 0.1);

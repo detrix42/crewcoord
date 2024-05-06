@@ -20,6 +20,7 @@ class CrewMemberController < ApplicationController
   end
 
   def create
+    @tier = params.permit(:tier)[:tier]
     unless @manager.present?
       @manager = CrewMember.new
     end

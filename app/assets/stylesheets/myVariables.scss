@@ -21,3 +21,7 @@ $hero-title-fg: $fg1;
 $hero-title-color: $fg1;
 $zpanel-color: $fg2;
 $zpanel-bg-color: $bg2;
+
+$h3-tier-gradient-left-bg: linear-gradient(to right, $bg1, rgba(30, 40, 44, 0.5));
+$h3-tier-gradient-right-bg: linear-gradient(to right,
+        rgba(30, 40, 44, 0.5), rgba(30, 40, 44, 0.0));

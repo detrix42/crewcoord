@@ -1,3 +1,5 @@
+@import 'myVariables';
+
 @media only screen and (min-width: 769px) {
   .top-nav {
 
@@ -48,19 +50,28 @@
     display: none;
   }
 
-  .quad-content {
-    gap: 2rem;
-    color: #3eb5e0;
-    flex-wrap: wrap;
-
-    .row-content2 {
-      flex: 1;
-      background-color: rgba(47, 155, 194, 0.1);
-      padding: 1em;
-      border-radius: 10px;
-      box-shadow: 5px 5px 15px black;
-    }
-
-  }
+  //.lifted-card-content {
+  //  gap: 2rem;
+  //  color: #3eb5e0;
+  //  flex-wrap: wrap;
+  //
+  //  .row-content1,
+  //  .card-contents {
+  //    flex: 1;
+  //    background-color: rgba(47, 155, 194, 0.1);
+  //    padding: 1em;
+  //    border-radius: 10px;
+  //    box-shadow: 5px 5px 15px black;
+  //
+  //    h3.tier-txt {
+  //      background-image: $h3-tier-gradient-bg;
+  //    }
+  //  }
+  //
+  //  .card-contents {
+  //
+  //  }
+  //
+  //}
 
 }

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'crew_member/create'
+  get 'crew_member/create', to: 'crew_member#create'
   post 'crew_member/create', to: 'crew_member#create_actual'
   get 'crew_member/fetch'
   get 'crew_member/update'
