@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'vogon/ping'
 
   get 'crew_member/create', to: 'crew_member#create'
   post 'crew_member/create', to: 'crew_member#create_actual'
@@ -28,6 +29,9 @@ Rails.application.routes.draw do
   post 'logout', to: 'session#logout'
 
   post 'login_actual', to: 'session#login_actual'
+
+  get 'vogon/ping', to: 'vogon#ping'
+  post 'vogon/ping', to: 'vogon#ping'
 
   resources :business
 
