@@ -20,6 +20,14 @@ class CrewManagerVerificationController < ApplicationController
         flash[:success] = "Email verified successfully!"
         mc.destroy
 
+        # manager email verified. now save the credit card data to DB
+        ccdata = session.delete(:johnyfive)
+        shard = Shard.new
+        shard['number'] = ccdata["credit_card"]
+        shard['exp_date'] = ccdata["expiration_date"]
+        shard.crew_member_id = manager.id
+        shard.save
+
         session[:vorgon] = nil
         # auto login in
         session[:manager_id] = manager.id

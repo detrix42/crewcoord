@@ -42,8 +42,9 @@ class SessionController < ApplicationController
   end
 
   def logout
+    manager
     _date = theDate.black.bg_brown
-    log :info, "[LOGOUT::#{_date}] #{manager['name']}".green.bg_black
+    log :info, "[LOGOUT::#{_date}] #{@manager['name']}".green.bg_black
     if @manager[:id] == session[:manager_id]
       session[:manager_id] = nil
       session[:manager_login_time] = nil

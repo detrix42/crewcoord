@@ -68,8 +68,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_06_034504) do
     t.uuid "crew_member_id", null: false
     t.string "number"
     t.string "exp_date"
+    t.string "cvv", limit: 4
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["crew_member_id", "number"], name: "index_shards_on_crew_member_id_and_number", unique: true
     t.index ["crew_member_id"], name: "index_shards_on_crew_member_id"
   end
 
