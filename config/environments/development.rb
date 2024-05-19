@@ -39,23 +39,11 @@ Rails.application.configure do
   #####################################################################
 
   config.action_mailer.perform_caching = false
-  config.action_mailer.default_url_options = { host: "crewcoord.net", port: 587 }
+  config.action_mailer.default_url_options = { host: "novasector.net" }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  # config.action_mailer.smtp_settings = {
-  #   domain: "novasector.net",
-  #   address: "mail.novasector.net",
-  #   port: 587,
-  #   authentication: "plain",
-  #   enable_starttls_auto: true,
-  #   # openssl_verify_mode: OpenSSL::SSL::VERIFY_NONE,
-  #   openssl_verify_mode: 'none',
-  #   user_name: "webmaster@crewcoord.net",
-  #   password: "Klingon8085",
-  #   read_timeout: 600, # Time in seconds, you can increase it accordingly.
-  #   open_timeout: 60, # Time in seconds, this is for the opening connection.
-  # }
+
   #####################################################################
 
   # Print deprecation notices to the Rails logger.
@@ -90,4 +78,9 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  # port 4281 gets routed to 4280 on my desktop; for testing
+  # config.url_prefix = 'http://crewcoord.net:42081/'
+  config.url_prefix = 'http://localhost:4280/'
+  config.hosts << 'crewcoord.net:42081'
 end

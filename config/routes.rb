@@ -1,10 +1,37 @@
 Rails.application.routes.draw do
-  get 'crew_manager_verification/confirm_token'
+  get 'vogon/ping'
+
+  get 'crew_member/create', to: 'crew_member#create'
+  post 'crew_member/create', to: 'crew_member#create_actual'
+  get 'crew_member/fetch'
+  get 'crew_member/update'
+  get 'crew_member/destroy'
+
+  get 'crew_manager_verification/confirm_form'
+  post 'crew_manager_verification/confirm_token/', to: 'crew_manager_verification#confirm_token'
+
+  get 'password_reset/prompt_email'
+  get 'password_reset/reset'
+  post 'password_reset/reset', to: 'password_reset#reset_submit'
+  get 'password_reset/update'
+  post 'password_reset/update', to: 'password_reset#update_submit'
+  post 'password_reset/reset_verify', to: 'password_reset#reset_verify'
+  get 'password_reset/new_password'
+  get 'password_reset/update'
+  post 'password_reset/update', to: 'password_reset#update_submit'
+
   get 'business/create'
-  get 'session/signup'
-  get 'session/login'
-  get 'session/create'
+  post 'business/create', to: 'business#create_actual'
+
+  get 'login_form', to: 'session#login_form'
+
   get 'home/index', to: 'home#landing'
+  post 'logout', to: 'session#logout'
+
+  post 'login_actual', to: 'session#login_actual'
+
+  get 'vogon/ping', to: 'vogon#ping'
+  post 'vogon/ping', to: 'vogon#ping'
 
   resources :business
 

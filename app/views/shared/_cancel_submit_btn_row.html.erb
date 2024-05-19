@@ -1,0 +1,9 @@
+<div class="dflexr-jcsb button-row">
+
+  <%= link_to 'Cancel', root_path, class: 'btn-common btn-cancel' %>
+
+  <%= f.button 'Submit Form', id: 'form-submit-button',
+               class: 'btn-common manager-form-submit', disabled: true,
+               data: { turbo_action: 'replace',
+                       disable_with: 'Processing...' } %>
+</div>

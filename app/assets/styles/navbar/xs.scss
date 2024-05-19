@@ -1,13 +1,32 @@
-@media only screen and (min-width: 200px) and (max-width: 600px) {
+@import "myVariables";
+
+@media only screen and (min-width: 200px) {
   .top-nav {
     //align-items: center;
     background: #232a33;
     color: #62c9cc;
     width: 100%;
+    height: $top-nav-height;
 
     .brand {
-      margin-left: 10px;
+      width: 100%;
       font-size: 3rem;
+      color: #3eb5e0;
+
+      .dateStamp {
+        font-size: 8pt;
+
+      }
+    }
+
+    .brand-link {
+
+      text-align: center;
+
+      &:hover {
+        //color: darkseagreen;
+        text-shadow: 1px 1px 15px yellowgreen;
+      }
     }
 
     .nav-center {
@@ -18,6 +37,18 @@
 
     .nav-actions {
       display: none;
+      gap: 1rem;
+      font-size: 1em;
+
+      .action-item {
+        border: 1px solid #5db4ae;
+        border-radius: 5px;
+        margin-inline: 20%;
+
+        &:hover {
+          color: white;
+        }
+      }
     }
 
     .menu-action {
@@ -25,6 +56,42 @@
       margin-left: 10px;
     }
 
+
+  }
+
+  .lifted-card-content {
+    gap: 2rem;
+    color: #3eb5e0;
+    flex-wrap: wrap;
+
+    .row-content1,
+    .card-contents {
+      flex: 1;
+      background-color: rgba(47, 155, 194, 0.1);
+      padding: 1em;
+      border-radius: 10px;
+      box-shadow: 5px 5px 15px black;
+
+      h3.tier-txt {
+        flex: 1;
+        padding-left: 1rem;
+        background-image: $h3-tier-gradient-left-bg;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+      }
+
+      h4.tier-sub-txt {
+        background-image: $h3-tier-gradient-right-bg;
+        color: white;
+        font-size: .8em;
+        padding-right: 1rem;
+        align-content: center;
+      }
+    }
+
+    .card-contents {
+
+    }
 
   }
 
@@ -41,14 +108,6 @@
     .theDate {
       margin-bottom: 1rem;
       background: rgba(35, 42, 51, 0.78);
-    }
-
-    a {
-      text-decoration: none;
-
-      &:visited {
-        color: #123031;
-      }
     }
 
     .nav-item {
@@ -70,5 +129,21 @@
 
   .displayOff {
     display: none;
+  }
+
+  .lifted-card-content {
+    gap: 2rem;
+    color: $zpanel-color;
+    flex-wrap: wrap;
+
+    .row-content1 {
+      //width: 100%;
+
+      background-color: rgba(47, 155, 194, 0.1);
+      padding: 1em;
+      border-radius: 10px;
+      box-shadow: 5px 5px 15px black;
+    }
+
   }
 }

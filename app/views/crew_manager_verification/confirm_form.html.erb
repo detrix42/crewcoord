@@ -1,0 +1,66 @@
+<% provide :title, "Crew Member Verification" %>
+<% content_for :moreCSS do %>
+  <%= stylesheet_link_tag "forms", media: 'screen' %>
+<% end %>
+
+<% content_for :moreJS do %>
+  <%= javascript_include_tag 'shared/global_functions' %>
+<% end %>
+
+<style>
+  .content {
+    width: 100%;
+    margin: 50px auto;
+  }
+
+  .message {
+    margin-bottom: 2rem;
+  }
+
+  .crew-manager-verification-heading{
+    color: white;
+  }
+</style>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: "col-5 flash #{name}" %>
+<% end %>
+
+<div class="crew-manager-verification-heading text-center">
+  <h1>Crew Manager Verification</h1>
+</div>
+<div class="content d-flex justify-content-center flex-column align-items-center w-50">
+  <%= render 'shared/flash_msg' %>
+
+  <div class="message">
+    <p>An email was sent to the email address you signed up with that contains a verification code.</p>
+    <br>
+    <p>The email will very likely end up in your <span style="color: red">spam box</span>.</p>
+    <br>
+    <p>Copy and paste that code into the field below:</p>
+  </div>
+
+  <div class=" verify-form">
+    <%= form_tag('/crew_manager_verification/confirm_token', method: :post) do %>
+      <%= text_field_tag(:token, nil, placeholder: 'Paste code here...') %>
+      <%= submit_tag 'Submit' %>
+    <% end %>
+  </div>
+</div>
+<script type="text/javascript" charset="utf-8">
+  $(document).on('turbo:load', () => {
+
+    setTimeout(() => {
+      init_inputfields()
+    }, 300)
+
+  })
+
+  flash_fade()
+
+</script>
+
+
+
+
+

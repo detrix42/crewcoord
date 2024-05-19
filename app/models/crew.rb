@@ -11,4 +11,5 @@
 class Crew < ApplicationRecord
   belongs_to :business
   has_many :crew_member
+
 end

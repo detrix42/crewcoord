@@ -1,4 +1,27 @@
-$top-nav-height: 4rem;
+$top-nav-height: 6rem;
 
-// signup form variables
 
+
+
+$top-nav-icon-color: #2f9bc2;
+
+$bg1: rgb(30, 40, 44);
+$bg2: rgba(47, 155, 194, 0.1);
+
+$fg1: #defaf3;
+$fg2: #3eb5e0;
+$fg3: bisque;
+
+// home page
+// colors
+
+$hero-title-bg: $bg2;
+$hero-title-fg: $fg1;
+
+$hero-title-color: $fg1;
+$zpanel-color: $fg2;
+$zpanel-bg-color: $bg2;
+
+$h3-tier-gradient-left-bg: linear-gradient(to right, $bg1, rgba(30, 40, 44, 0.5));
+$h3-tier-gradient-right-bg: linear-gradient(to right,
+        rgba(30, 40, 44, 0.5), rgba(30, 40, 44, 0.0));

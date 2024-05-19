@@ -15,15 +15,37 @@
  */
 @import 'bootstrap';
 @import 'myVariables';
+@import 'global_classes';
+@import "home";
 
 
 
 body {
   background: #2a2d31;
   margin: 0;
-
+  height: calc(100vh - var(--top-nav-height));
   color: bisque;
 }
+
+input {
+  background-color: var(--form-input-fields-bg) !important;
+  border: none !important;
+  border-bottom: 2px solid var(--form-border-color) !important;
+  color: white !important;
+  padding: 3px 5px !important;
+  font-size: var(--form-font-size) !important;
+
+  &:active, &:focus, &:-webkit-autofill {
+    outline: none !important;
+    border-bottom: none !important;
+    box-shadow: 0 0 10px rgb(130, 219, 246) !important;
+  }
+  .need-required {
+    box-shadow: 0 0 5px red;
+  }
+}
+
+
 
 .btn-common {
   border: 1px solid var(--form-signup-btn-border-color);
@@ -36,12 +58,124 @@ body {
   display: none !important;
 }
 
+a {
+  text-decoration: none;
+
+  &:visited:hover {
+    color: white;
+  }
+
+  &:visited {
+    color: #425a5b;
+  }
+}
+
+.form-container {
+  height: calc(99vh - var(--top-nav-height));
+  align-items: center;
+  gap: 1rem;
+
+  .button-row {
+    justify-content: space-around;
+  }
+}
+
+.flash-container {
+  position: absolute;
+  width: 50%;
+  height: 100px;
+
+}
+
+.flash {
+  margin: 0 auto;
+  font-size: var(--form-font-size);
+  border-radius: 1rem;
+  box-shadow: 0 5px 16px black;
+}
+
+//  .alert, .notice,
+//  .success, .error {
+//    text-align: center;
+//  }
+//
+//  .success {
+//    background: palegreen;
+//    border: 1px solid green;
+//    color: darkgreen;
+//  }
+//
+//  .notice {
+//    background: #4d85ff;
+//    border: 1px solid #abceff;
+//    color: #003654;
+//  }
+//
+//  .alert {
+//    background-color: rgba(255, 165, 0, 0.61);
+//    border: 1px solid yellow;
+//    color: #2E2F30;
+//  }
+//
+//  .error {
+//    background: rgba(255, 0, 0, 0.58);
+//    border: 1px solid darkred;
+//    color: yellow;
+//  }
+//}
+
+
+.flash.alert,
+.flash.notice,
+.flash.success,
+.flash.error {
+  text-align: center;
+}
+
+
+.flash.success {
+  background: #1a701a;
+  border: 2px solid #62b462;
+  color: #75da75;
+}
+
+.flash.notice {
+  background: #4d85ff;
+  border: 2px solid #697c98;
+  color: #324059;
+}
+
+.flash.alert {
+  background-color: rgba(255, 165, 0, 0.61);
+  border: 1px solid yellow;
+  color: #2E2F30;
+}
+
+.flash.error {
+  background: rgb(128, 73, 73);
+  border: 2px solid #930000;
+  color: #ffcc00;
+  text-shadow: 1px 1px 3px black;
+}
+
+// global position for flash message
+// this may not be suitable for all
+// pages.
+.flash-position-success,
+.flash-position-error {
+  top: 17%;
+  left: 25%;
+  height: 100px;
+}
+
+
 :root {
-  --top-nav-height: 4rem;
+  --top-nav-height: 6rem;
 
   // global colors
   --card-border-color: bisque;
   --form-border-color: #919191;
+
 
   --btn-cancel-bg-color: #8f0000;
   --btn-cancel-bdr-color: red;
