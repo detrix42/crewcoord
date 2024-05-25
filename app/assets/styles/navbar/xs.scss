@@ -64,7 +64,7 @@
     color: #3eb5e0;
     flex-wrap: wrap;
 
-    .row-content1,
+    .row1-content,
     .card-contents {
       flex: 1;
       background-color: rgba(47, 155, 194, 0.1);
@@ -89,8 +89,8 @@
       }
     }
 
-    .card-contents {
-
+    .row2-content {
+      min-width: 250px;
     }
 
   }
@@ -136,9 +136,13 @@
     color: $zpanel-color;
     flex-wrap: wrap;
 
-    .row-content1 {
-      //width: 100%;
+    .row1-content,
+    .row2-content {
+      flex: 1;
+      min-width: 300px;
+    }
 
+    .row1-content {
       background-color: rgba(47, 155, 194, 0.1);
       padding: 1em;
       border-radius: 10px;
