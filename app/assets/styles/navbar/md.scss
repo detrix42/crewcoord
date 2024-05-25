@@ -50,6 +50,30 @@
     display: none;
   }
 
+  .hero-card {
+    margin: 0 auto;
+    background-color: $bg1;
+    width: 70%;
+
+    .hero-title {
+      font-size: 3em;
+      padding: 1em 0;
+      color: $hero-title-fg;
+      background-color: $hero-title-bg;
+    }
+
+
+
+    p {
+      color: $fg2;
+      font-size: 1.5em;
+    }
+  }
+
+  .description-panel {
+    margin: 0 auto 3rem auto;
+  }
+
   //.lifted-card-content {
   //  gap: 2rem;
   //  color: #3eb5e0;
