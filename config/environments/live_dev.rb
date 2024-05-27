@@ -80,4 +80,7 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
 
   config.url_prefix = 'http://novasector.net/'
+
+  config.stripe_api_key =
+    Rails.application.credentials.dig(:crewcoord, :stripe, :sk_test_key)
 end

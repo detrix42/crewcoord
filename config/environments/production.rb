@@ -97,4 +97,7 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
   config.url_prefix = 'http://crewcoord.net/'
+
+  config.stripe_api_key =
+    Rails.application.credentials.dig(:crewcoord, :stripe, :pk_live_key)
 end

@@ -83,4 +83,7 @@ Rails.application.configure do
   # config.url_prefix = 'http://crewcoord.net:42081/'
   config.url_prefix = 'http://localhost:4280/'
   config.hosts << 'crewcoord.net:42081'
+
+  config.stripe_api_key =
+    Rails.application.credentials.dig(:crewcoord, :stripe, :sk_test_key)
 end
