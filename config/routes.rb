@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'credit_card/validate'
+  post 'credit_card/validate'
   get 'vogon/ping'
 
   get 'crew_member/create', to: 'crew_member#create'

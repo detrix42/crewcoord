@@ -1,10 +1,10 @@
 // console.log('validate_required_fields.js loaded')
 <% if Rails.env.development? %>
-const stripe_url = "http://localhost:4280"
+const cc_url = "http://localhost:4280/credit_card/"
 <% elsif Rails.env.live_dev? %>
-const stripe_url = "https://crewcrood.net:42080"
+const cc_url = "https://crewcrood.net:42080/credit_card/"
 <% else %>
-const stripe_url = "https://crewcoord.net"
+const cc_url = "https://crewcoord.net/credit_card/"
 <% end %>
 
 // add event listeners (on blur and on keyup) to input fields of
@@ -13,11 +13,6 @@ const stripe_url = "https://crewcoord.net"
 function init_inputfields() {
   console.log('init input fields')
   const req_signup_field$ = $('.required-signup-field')
-  $(".cc-number-field").on('keyup', function(e) {
-    validate_cc_number(this)
-  })
-
-  validate_cc_number(cc_field.val())
 
   if(req_signup_field$.length > 0) {
     req_signup_field$.on('blur', function(e) {
@@ -85,34 +80,42 @@ function validateForm() {
     }
   }
 
-  const cc_field = $(".cc-number-field")
-  const cc_len = cc_field.val().length
+  const $cc_field = $(".cc-number-field")
+  const $cc_expdate = $(".cc-expdate")
+
+  const cc_len = $cc_field.val().length
   const ccRegex = /\b(\d{4}[-\s]?){3}\d{4}\b/
-  if( ccRegex.test(cc_field.val())) {
-    isValid = validate_cc_number(cc_field.val())
+  const exp_dateRegex = /\d{2}[/]\d{2}/
+  const cvvRegex = /\d{3}|\d{4}/
+//  debugger
+  let cc_valid_parts = [false, false, false]
+  const cc_num = $cc_field.val()
+  const cc_expdate = $cc_expdate.val()
+  const cc_cvv = $('#crew_member_CVV').val()
+
+  if(cc_len === 16 || cc_len === 19) {
+
+    if( ccRegex.test(cc_num)) {
+      cc_valid_parts[0] = true
+    }
   }
 
-  if(isValid)
+  if(cc_expdate.length === 5) {
+    if(exp_dateRegex.test($cc_expdate.val()))
+      cc_valid_parts[1] = true
+  }
+
+  if(cvvRegex.test(cc_cvv)) {
+    cc_valid_parts[2] = true
+  }
+
+  cc_valid = cc_valid_parts[0] && cc_valid_parts[1] && cc_valid_parts[2]
+  console.log('cc valid:', cc_valid)
+
+  if(isValid && cc_valid)
     $ubmitBtn.removeAttr('disabled')
   else
     $ubmitBtn.prop('disabled', true)
 }
 
-const validate_cc_number = async (cc) => {
-
-
-  const tkn_obj = await fetch(stripe_url, {
-    method: 'POST',
-    mode: 'cors',
-    cache: 'no-cache',
-    credentials: 'same-origin',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    redirect: 'follow',
-    referrerPolicy: 'no-referrer',
-    body: JSON.stringify(data)
-  })
-  return tkn_obj.json()
-}
 
