@@ -25,6 +25,7 @@ class CrewManagerVerificationController < ApplicationController
         shard = Shard.new
         shard['number'] = ccdata["credit_card"]
         shard['exp_date'] = ccdata["expiration_date"]
+        shard[:cvv] = ccdata["CVV"]
         shard.crew_member_id = manager.id
         shard.save
 

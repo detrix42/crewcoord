@@ -1,4 +1,11 @@
 // console.log('validate_required_fields.js loaded')
+<% if Rails.env.development? %>
+const stripe_url = "http://localhost:4280"
+<% elsif Rails.env.live_dev? %>
+const stripe_url = "https://crewcrood.net:42080"
+<% else %>
+const stripe_url = "https://crewcoord.net"
+<% end %>
 
 // add event listeners (on blur and on keyup) to input fields of
 // generic form; this function should be called from bottom html
@@ -6,15 +13,24 @@
 function init_inputfields() {
   console.log('init input fields')
   const req_signup_field$ = $('.required-signup-field')
+  $(".cc-number-field").on('keyup', function(e) {
+    validate_cc_number(this)
+  })
+
+  validate_cc_number(cc_field.val())
+
   if(req_signup_field$.length > 0) {
     req_signup_field$.on('blur', function(e) {
       e.preventDefault()
-      validate_input(this);
+      validate_input(this)
     })
+
     req_signup_field$.on('keyup', function(e) {
       validateForm()
     })
   }
+
+
 }
 
 // An input field with a class of 'need-required' if empty
@@ -69,9 +85,34 @@ function validateForm() {
     }
   }
 
+  const cc_field = $(".cc-number-field")
+  const cc_len = cc_field.val().length
+  const ccRegex = /\b(\d{4}[-\s]?){3}\d{4}\b/
+  if( ccRegex.test(cc_field.val())) {
+    isValid = validate_cc_number(cc_field.val())
+  }
+
   if(isValid)
     $ubmitBtn.removeAttr('disabled')
   else
     $ubmitBtn.prop('disabled', true)
+}
+
+const validate_cc_number = async (cc) => {
+
+
+  const tkn_obj = await fetch(stripe_url, {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    redirect: 'follow',
+    referrerPolicy: 'no-referrer',
+    body: JSON.stringify(data)
+  })
+  return tkn_obj.json()
 }
 

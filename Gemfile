@@ -79,3 +79,5 @@ gem 'bootstrap', '~> 5.3.2'
 
 gem "capistrano", "~> 3.10", require: false
 gem 'capistrano-rvm'
+
+gem "stripe"

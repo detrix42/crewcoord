@@ -2,6 +2,7 @@ document.addEventListener('turbo:load', function() {
   // console.log('home js dom loaded')
   $('.open-navpanel').on('click', open_nav_panel)
   $('.close-navpanel').on('click', close_nav_panel)
+  console.log('env:', window.location.hostname)
 
 
   function open_nav_panel() {
