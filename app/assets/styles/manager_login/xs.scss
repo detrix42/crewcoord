@@ -1,0 +1,28 @@
+@import 'myVariables';
+@media only screen and (min-width: 200px)  {
+
+  .container {
+    height: calc(100vh - var(--top-nav-height));
+    width: 80%;
+  }
+
+  .card {
+    --bs-card-border-color: antiquewhite;
+  }
+
+  .card-header {
+    background-color: var(--header1-bg-color);
+    margin-bottom: 20px;
+  }
+
+  .card-body {
+    color: antiquewhite;
+    background-color: #232a33 !important;
+
+    .card-header-txt {
+      color: antiquewhite;
+    }
+
+
+  }
+}

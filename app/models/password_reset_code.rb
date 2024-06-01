@@ -1,0 +1,2 @@
+class PasswordResetCode < ApplicationRecord
+end

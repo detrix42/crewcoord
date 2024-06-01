@@ -1,0 +1,29 @@
+@media only screen and (min-width: 200px) {
+  .need-required {
+    box-shadow: 0 0 5px red;
+  }
+
+  input[name="crew_member[name]"],
+  input[name="crew_member[email]"],
+  input[name="crew_member[phone]"],
+  input[name="crew_member[password]"] {
+    margin-bottom: .5rem;
+  }
+
+  input[name='crew_member[password_confirmation]'] {
+    margin-bottom: 1em;
+  }
+
+
+  .form-header2 {
+    font-size: 2em;
+  }
+
+  .flash-position-success {
+
+  }
+
+  .flash-position-error {
+
+  }
+}

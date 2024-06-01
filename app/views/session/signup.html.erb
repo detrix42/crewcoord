@@ -1,0 +1,52 @@
+<% provide :title, "Company Sign Up" %>
+<% content_for :moreCSS do %>
+  <%= stylesheet_link_tag "company_signup", media: 'screen' %>
+<% end %>
+
+<% content_for :moreJS do %>
+  <%= javascript_include_tag "company_signup" %>
+<% end %>
+
+<div class="dflexc-jcc main-container">
+  <% if @business.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@business.errors.count, "error") %> prohibited this business from being saved:</h2>
+
+      <ul>
+        <% @business.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="dflexc-jcs signup-card">
+    <div class="signup-form-header">New Company Signup</div>
+
+    <%= form_with(model: @business, url: business_index_path(@business),
+                  method: :post, id: 'companySignupForm',
+                  html: {class: 'business-form'}) do |f| %>
+
+      <div class="dflexr-jcs form-row">
+        <%= render 'company_form_fields', f: f %>
+
+        <%= render 'crew_member_form_fields', f: f %>
+
+      </div>
+
+      <div class="dflexr-jcsb button-row">
+
+        <%= link_to 'Cancel', root_path, class: 'btn-common btn-cancel' %>
+
+        <%= f.button 'Submit New Business', id: 'new-business-submit-button',
+                     class: 'btn-common company-form-submit', disabled: true,
+                     data: { disable_width: 'Processing...' } %>
+      </div>
+
+
+    <% end %>
+
+
+  </div>
+
+</div>
+

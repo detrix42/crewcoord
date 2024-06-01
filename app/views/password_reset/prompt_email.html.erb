@@ -1,0 +1,17 @@
+<% provide :title, "Forgot Password" %>
+<% content_for :moreCSS do %>
+  <%= stylesheet_link_tag "forms", media: 'screen' %>
+<% end %>
+<div class="container">
+  <div class="d-flex flex-column align-items-center h-100" style="margin-top: 2rem;">
+
+    <h1>Enter the email address you signed up with</h1>
+    <div class=" verify-form">
+      <%= form_tag(password_reset_reset_path, method: :post) do %>
+
+        <%= text_field_tag(:email, nil, placeholder: 'Email') %>
+        <%= submit_tag 'Submit' %>
+      <% end %>
+    </div>
+  </div>
+</div>
