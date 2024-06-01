@@ -20,10 +20,11 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development: &dev
-  <<: *default
-  user: detrix42
-  password: Klingon8085
-  database: crew_coord_dev
+#  <<: *default
+  adapter: sqlite3
+#  user: detrix42
+#  password: Klingon8085
+  database: db/crew_coord_dev.sqlite3
 
 
 live_dev:
