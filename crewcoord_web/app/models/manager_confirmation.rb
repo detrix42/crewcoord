@@ -1,0 +1,2 @@
+class ManagerConfirmation < ApplicationRecord
+end

@@ -1,0 +1,37 @@
+<% provide :title, "Password Recovery" %>
+<% content_for :moreCSS do %>
+  <%#= stylesheet_link_tag "password_recovery", media: 'screen' %>
+  <%= stylesheet_link_tag "forms", media: 'screen' %>
+<% end %>
+
+<% content_for :moreJS do %>
+  <%#= javascript_include_tag "password_recover" %>
+<% end %>
+<div class="container">
+
+  <div class="d-flex flex-column align-items-center h-100">
+
+    <div class="crew-manager-verification-heading text-center">
+      <h1>Password Reset Request</h1>
+    </div>
+    <div class="content d-flex justify-content-center flex-column align-items-center w-50">
+
+      <div class="message">
+        <p>An email was sent to the email address that is from your profile that contains a
+          password reset code.</p>
+
+        <p>The email will very likely end up in your <span style="color: red">spam box</span>.</p>
+
+        <p>Copy and paste that code into the field below:</p>
+      </div>
+
+      <div class=" verify-form">
+        <%= form_tag("#{@link_url}reset_verify", method: :post) do %>
+          <%= text_field_tag(:code, nil, placeholder: 'Paste code here...') %>
+          <%= submit_tag 'Submit' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>

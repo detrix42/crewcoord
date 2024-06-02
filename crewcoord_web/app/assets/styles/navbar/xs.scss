@@ -1,0 +1,218 @@
+@import "myVariables";
+
+@media only screen and (min-width: 200px) {
+  .top-nav {
+    //align-items: center;
+    background: #232a33;
+    color: #62c9cc;
+    width: 100%;
+    height: $top-nav-height;
+
+    .brand {
+      width: 100%;
+      font-size: 3rem;
+      color: #3eb5e0;
+
+      .dateStamp {
+        font-size: 8pt;
+
+      }
+    }
+
+    .brand-link {
+
+      text-align: center;
+
+      &:hover {
+        //color: darkseagreen;
+        text-shadow: 1px 1px 15px yellowgreen;
+      }
+    }
+
+    .nav-center {
+      display: none;
+    }
+
+
+
+    .nav-actions {
+      display: none;
+      gap: 1rem;
+      font-size: 1em;
+
+      .action-item {
+        border: 1px solid #5db4ae;
+        border-radius: 5px;
+        margin-inline: 20%;
+
+        &:hover {
+          color: white;
+        }
+      }
+    }
+
+    .menu-action {
+      display: flex;
+      margin-left: 10px;
+    }
+
+
+  }
+
+  .lifted-card-content {
+    gap: 2rem;
+    color: #3eb5e0;
+    flex-wrap: wrap;
+
+    .row1-content,
+    .card-contents {
+      flex: 1;
+      background-color: rgba(47, 155, 194, 0.1);
+      padding: 1em;
+      border-radius: 10px;
+      box-shadow: 5px 5px 15px black;
+
+      h3.tier-txt {
+        flex: 1;
+        padding-left: 1rem;
+        background-image: $h3-tier-gradient-left-bg;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+      }
+
+      h4.tier-sub-txt {
+        background-image: $h3-tier-gradient-right-bg;
+        color: white;
+        font-size: .8em;
+        padding-right: 1rem;
+        align-content: center;
+      }
+    }
+
+    .row2-content {
+      min-width: 250px;
+    }
+
+  }
+
+  .nav-panel {
+    display: none;
+    z-index: 99;
+
+    font-size: 2em;
+
+    width: 100%;
+    background: rgba(86, 103, 133, 0.53);
+    backdrop-filter: blur(5px);
+
+    .theDate {
+      margin-bottom: 1rem;
+      background: rgba(35, 42, 51, 0.78);
+    }
+
+    .nav-item {
+      margin: 10px auto;
+    }
+  }
+
+  .nav-panel-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .close-navpanel {
+    align-self: end;
+  }
+
+  .displayOff {
+    display: none;
+  }
+
+  .hero-card {
+    margin: 0;
+    background-color: $bg1;
+    width: 99%;
+
+    .hero-title {
+      font-size: 3em;
+      padding: 1em 0;
+      color: $hero-title-fg;
+      background-color: $hero-title-bg;
+    }
+
+
+
+    p {
+      color: $fg2;
+      font-size: 1.5em;
+    }
+  }
+
+  .description-panel {
+    width: 97%;
+    margin: 0 auto;
+
+    .row-with-img-left,
+    .row-with-img-right {
+      flex-grow: 3;
+      width: 60%;
+      //height: 100px;
+      border: 1px solid white;
+
+
+      .row-content {
+        flex: 1;
+        text-align: justify;
+        padding: 1em;
+      }
+
+
+
+
+      .row-img-left {
+        margin-right: 1rem;
+      }
+
+      .row-img-right {
+        margin-left: 1rem;
+      }
+
+    }
+
+    .row-with-img-left {
+      margin: 10px 0 10px 60px;
+    }
+
+    .row-with-img-right {
+      justify-self: end;
+      margin: 10px 60px 10px auto;
+
+    }
+
+
+
+  }
+
+  .lifted-card-content {
+    gap: 2rem;
+    color: $zpanel-color;
+    flex-wrap: wrap;
+
+    .row1-content,
+    .row2-content {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .row1-content {
+      background-color: rgba(47, 155, 194, 0.1);
+      padding: 1em;
+      border-radius: 10px;
+      box-shadow: 5px 5px 15px black;
+    }
+
+  }
+}

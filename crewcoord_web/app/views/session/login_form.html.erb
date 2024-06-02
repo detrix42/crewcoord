@@ -1,0 +1,57 @@
+<% provide :title, "Company Sign Up" %>
+<% content_for :moreCSS do %>
+  <%= stylesheet_link_tag "manager_login", media: 'screen' %>
+<% end %>
+
+<% content_for :moreJS do %>
+  <%= javascript_include_tag "manager_login" %>
+<% end %>
+<div class="container">
+
+<div class="d-flex flex-column justify-content-center align-items-center h-100">
+
+    <% flash.each do |name, msg| %>
+      <div class="flash-container">
+        <%= content_tag :div, msg, class: "col-5 flash #{name}" %>
+      </div>
+    <% end %>
+
+
+
+  <div class="row justify-content-center w-100">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="card-header">
+            <h2 class="text-center mb-4 card-header-txt">Login Form</h2>
+          </div>
+
+          <%= form_with(url: 'login_actual',
+                        class: 'd-flex flex-column justify-content-center',
+                        method: :post, local: true) do |f| %>
+            <div class="d-flex flex-column mb-3">
+              <%= f.label :email, class: "sr-only" %>
+              <%= f.text_field :email, class: 'required_field' %>
+            </div>
+            <div class="d-flex flex-column mb-3">
+              <%= f.label :password, 'Password', class: "sr-only" %>
+              <%= f.password_field :password,  class: 'required_field' %>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+              <%= link_to 'Cancel', root_path, class: 'btn btn-secondary' %>
+
+              <%= link_to 'Forgot Password', password_reset_prompt_email_path, class: 'btn btn-info' %>
+
+              <%= f.button 'Login', id: 'login-submit-button',
+                           class: 'btn btn-primary form-submit', disabled: false,
+                           data: { disable_with: 'Processing...' } %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+

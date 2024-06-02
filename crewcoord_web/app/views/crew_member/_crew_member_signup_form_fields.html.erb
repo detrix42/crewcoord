@@ -1,0 +1,81 @@
+
+<%= form_with(model: @manager, url: crew_member_create_path,
+              method: :post, id: 'crew-manager-signup-form',
+              local: true, class: 'col-12 col-md-6 col-xl-5' ) do |f| %>
+
+    <div class="d-flex flex-column crew-manager-col">
+
+        <div class="form-header2 text-center">
+          Crew Manager Signup Information
+        </div>
+        <div class="d-flex flex-column field mt-4">
+          <%= f.label :name %>
+          <%= f.text_field :name, class: 'required-signup-field',
+          autofocus: true %>
+        </div>
+
+      <div class="d-flex justify-content-between">
+        <div class="d-flex flex-column field mt-2 col-7">
+          <%= f.label :email %>
+          <%= f.text_field :email, class: 'required-signup-field' %>
+        </div>
+
+        <div class="d-flex flex-column field mt-2 col-4">
+          <%= f.label :phone %>
+          <%= f.text_field :phone, class: 'required-signup-field' %>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column field mt-2 col-12">
+        <%= f.label :credit_card %>
+        <%= f.text_field :credit_card, class: 'required-signup-field cc-number-field' %>
+      </div>
+
+      <div class="d-flex justify-content-between">
+
+        <div class="d-flex flex-column field mt-2 col-7">
+          <div class="d-flex justify-content-between">
+            <%= f.label :expiration_date %>
+            <div class="date-format">Month/Year</div>
+          </div>
+
+          <%= f.text_field :expiration_date, class: 'required-signup-field cc-expdate',
+                           placeholder: 'eg: 03/99'%>
+        </div>
+
+        <div class="d-flex flex-column field mt-2 col-3">
+          <%= f.label :cvv, 'CVV' %>
+          <%= f.text_field :CVV, class: 'required-signup-field' %>
+        </div>
+
+      </div>
+
+      <div class="d-flex justify-content-end">
+
+
+      </div>
+
+      <div class="d-flex flex-column field mt-2">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'required-signup-field',
+        id: 'signup-password1'%>
+      </div>
+
+        <div class="d-flex flex-column field mt-2">
+          <div class="d-flex justify-content-between">
+            <%= f.label :password_confirmation %>
+            <span class="displayOff" id="pass-do-not-match-txt">
+              *does not match password
+            </span>
+          </div>
+
+          <%= f.password_field :password_confirmation,
+                               class: 'required-signup-field',
+                               id: 'signup-password2'%>
+        </div>
+
+    </div>
+  <%= render 'shared/cancel_submit_btn_row', f: f %>
+
+<% end %>
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield :title %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+
+    <!-- page specific css -->
+    <%= yield :moreCSS %>
+
+    <%= javascript_importmap_tags %>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous">
+    </script>
+    <%= javascript_include_tag 'home' %>
+
+    <!-- page specific JS -->
+    <%= yield :moreJS %>
+  </head>
+
+  <body>
+    <%= render 'layouts/top_nav_bar' %>
+    <div class="container">
+      <%= yield %>
+    </div>
+  <div class="footer" style="height: 2rem;"></div>
+  </body>
+</html>

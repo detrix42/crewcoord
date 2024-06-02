@@ -1,0 +1,40 @@
+<% provide :title, "Company Registration" %>
+<% content_for :moreCSS do %>
+  <%= stylesheet_link_tag "company_signup", media: 'screen' %>
+<% end %>
+
+<% content_for :moreJS do %>
+  <%= javascript_include_tag 'shared/validate_required_fields' %>
+<% end %>
+
+<div class="container ">
+  <h3 class="w-90 w-md-60">
+    <%= manager.name %> Thank you for signing up. We now need you to create a
+    company profile, using the following form:
+  </h3>
+
+
+  <%= render 'shared/flash_msg' %>
+
+  <div class="d-flex flex-column justify-content-center
+  form-container" data-turbo-action="replace">
+    <%= render 'company_form_fields' %>
+  </div>
+</div>
+
+
+<script type="text/javascript" charset="utf-8">
+
+  $(document).on('turbo:load', () => {
+    setTimeout(() => {
+      init_inputfields()
+    }, 300)
+
+
+  })
+
+  setTimeout(() => {
+    $('.flash').fadeOut('slow')
+  }, 5000)
+
+</script>

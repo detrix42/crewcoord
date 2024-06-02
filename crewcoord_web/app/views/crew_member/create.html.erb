@@ -1,0 +1,32 @@
+<% provide :title, "" %>
+<% content_for :moreCSS do %>
+  <%= stylesheet_link_tag "crewmember", media: 'screen' %>
+<% end %>
+
+<% content_for :moreJS do %>
+  <%= javascript_include_tag 'shared/global_functions' %>
+  <%= javascript_include_tag 'shared/validate_required_fields' %>
+<% end %>
+<div class="container d-flex flex-column justify-content-center form-container"
+     data-turbo-action="replace">
+  <%= render 'shared/flash_msg' %>
+
+  <%= render 'crew_member_signup_form_fields' %>
+
+
+</div>
+<script type="text/javascript" charset="utf-8">
+  $(document).on('turbo:load', () => {
+
+    setTimeout(() => {
+      init_inputfields()
+    }, 300)
+
+  })
+
+  flash_fade()
+
+</script>
+
+
+

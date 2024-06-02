@@ -1,0 +1,128 @@
+@media only screen and (min-width: 200px) {
+  .form-container {
+    padding-top: 1rem;
+    height: auto;
+
+    .need-required {
+      box-shadow: 0 0 5px red;
+    }
+
+
+    .signup-card {
+      margin: 0 auto;
+
+      width: 98vw;
+      gap: 20px;
+
+      //border: 1px solid #8c8c4d;
+      //border-radius: .5rem;
+
+      .field {
+        margin: 4px 8px;
+      }
+
+      .form-row {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
+      .signup-form-header {
+        display: inline;
+        font-size: calc(var(--header1-font-size) / 1.2);
+        background-color: var(--header1-bg-color);
+        height: calc(var(--header1-height) / 1.2);
+
+        text-align: center;
+      }
+
+
+    }
+
+  }
+
+  .form-header2 {
+    font-size: var(--header2-font-size);
+    background-color: var(--header2-bg-color);
+    height: var(--header2-height);
+    min-width: 400px;
+
+    padding-left: 10px;
+    margin-bottom: 1rem;
+
+    border-top-left-radius: var(--form-border-radus);
+    border-top-right-radius: var(--form-border-radus);
+  }
+
+  .company-col {
+    flex: 1;
+    //
+    //margin: 1rem;
+    //border: 1px solid var(--form-border-color);
+    //border-top-left-radius: var(--form-border-radus);
+    //border-top-right-radius: var(--form-border-radus);
+
+    input[name='business[name]'],
+    input[name='business[address1]'],
+    input[name='business[address2]'],
+    input[name='business[phone]']{
+      margin-bottom: 1rem;
+    }
+
+
+
+    .city-state-zip-row {
+
+      gap: .5rem;
+
+      input[name='business[city]'] {
+
+      }
+    }
+
+    .input-state {
+      flex: 0 1;
+      width: 100px;
+      padding: 0 1rem;
+    }
+
+    .input-city,
+    .input-zipcode {
+      flex: 1;
+    }
+
+    .input-city,
+    .input-state,
+    .input-zipcode {
+    }
+
+    .input-city {
+      width: 10%;
+    }
+    .input-zipcode {
+      width: 20%;
+    }
+  }
+
+  .button-row {
+    $btn-padding: 3px 6px;
+    height: 40px;
+    margin: 1rem;
+
+    .company-form-submit {
+      padding: $btn-padding;
+    }
+
+    .btn-cancel {
+      background-color: var(--btn-cancel-bg-color);
+      border-color: var(--btn-cancel-bdr-color);
+      color: var(--btn-cancel-fg-color);
+      padding: $btn-padding;
+      text-decoration: none;
+    }
+  }
+
+  .pass-do-not-match-shadow {
+    box-shadow: 0 0 8px yellow !important;
+  }
+
+}

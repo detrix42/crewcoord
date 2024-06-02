@@ -1,0 +1,101 @@
+@import 'myVariables';
+
+@media only screen and (min-width: 769px) {
+  .top-nav {
+
+    .brand {
+      //flex-basis: 30%;
+      text-align: center;
+      font-size: 3rem;
+      width: 100%;
+      //margin: auto 0 auto 20px;
+    }
+
+    .brand-link {
+      width: 30%;
+    }
+
+    .nav-actions-container {
+      flex-basis: 30%;
+    }
+
+    .nav-actions {
+      margin: auto 20px auto 0;
+
+      .txt-company {
+        font-size: 1.5em;
+        align-items: center;
+        text-align: center;
+      }
+
+      .company-nav-col {
+        //gap: 1rem;
+        align-items: center;
+      }
+
+      .manager-nav-col {
+        align-items: center;
+      }
+    }
+    .menu-action {
+      display: none;
+    }
+
+    .nav-center {
+      display: flex;
+    }
+
+  }
+  .nav-panel {
+    display: none;
+  }
+
+  .hero-card {
+    margin: 0 auto;
+    background-color: $bg1;
+    width: 70%;
+
+    .hero-title {
+      font-size: 3em;
+      padding: 1em 0;
+      color: $hero-title-fg;
+      background-color: $hero-title-bg;
+    }
+
+
+
+    p {
+      color: $fg2;
+      font-size: 1.5em;
+    }
+  }
+
+  .description-panel {
+    margin: 0 auto 3rem auto;
+  }
+
+  //.lifted-card-content {
+  //  gap: 2rem;
+  //  color: #3eb5e0;
+  //  flex-wrap: wrap;
+  //
+  //  .row-content1,
+  //  .card-contents {
+  //    flex: 1;
+  //    background-color: rgba(47, 155, 194, 0.1);
+  //    padding: 1em;
+  //    border-radius: 10px;
+  //    box-shadow: 5px 5px 15px black;
+  //
+  //    h3.tier-txt {
+  //      background-image: $h3-tier-gradient-bg;
+  //    }
+  //  }
+  //
+  //  .card-contents {
+  //
+  //  }
+  //
+  //}
+
+}
